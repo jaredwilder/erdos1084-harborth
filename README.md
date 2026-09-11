@@ -34,7 +34,7 @@ the fix.
   each name one explicit gap. This covers the arithmetic and angular half of the argument.
 - `prior-art/` - the novelty-search corpus and mission files behind the Harborth identification.
 
-## What is not claimed
+## Scope
 
 The upper bound is not closed here. The two walls are named in the report rather than papered
 over: Mathlib appears to lack the planar Steiner formula and the isoperimetric inequality for
