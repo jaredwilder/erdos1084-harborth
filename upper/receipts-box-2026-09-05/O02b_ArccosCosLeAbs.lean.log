@@ -1,0 +1,4 @@
+/root/peer/e1084-upper/O02b_ArccosCosLeAbs.lean:29:9: error(lean.unknownIdentifier): Unknown identifier `le_or_lt`
+/root/peer/e1084-upper/O02b_ArccosCosLeAbs.lean:29:35: error: Tactic `rcases` failed: `x✝ : ?m.50` is not an inductive datatype
+Command exited with non-zero status 1
+2.84 s

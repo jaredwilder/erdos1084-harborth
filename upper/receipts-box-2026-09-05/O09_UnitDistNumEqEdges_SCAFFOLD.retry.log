@@ -1,0 +1,16 @@
+/root/peer/e1084-upper/O09_UnitDistNumEqEdges_SCAFFOLD.lean:77:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  dist ?x ?x
+in the target expression
+  ?m.26 u
+
+S : Finset (ℝ^2)
+u : ?m.22
+h : ?m.26 u
+⊢ ?m.27 u h
+/root/peer/e1084-upper/O09_UnitDistNumEqEdges_SCAFFOLD.lean:76:14: error: Type mismatch
+  fun u h => ?m.25
+has type
+  (u : ?m.22) → (h : ?m.26 u) → ?m.27 u h
+but is expected to have type
+  Std.Irrefl fun u w => dist ↑u ↑w = 1
+/root/peer/e1084-upper/O09_UnitDistNumEqEdges_SCAFFOLD.lean:86:8: warning: declaration uses `sorry`

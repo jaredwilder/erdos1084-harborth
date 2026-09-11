@@ -1,0 +1,29 @@
+{
+  "rung": "H4",
+  "file": "oracle/evidence/msl-machine/campaigns/erdos1084-harborth-2026-09-02/upper/H04_ConeBound.lean",
+  "box_path": "/root/peer/sub-h4/H04_ConeBound.lean",
+  "mathlib": "919544d4 / v4.31.0-rc1",
+  "compile": "exit 0, 0 errors",
+  "status": "PARTIAL + FROZEN STATEMENT REFUTED",
+  "headline": "h4_cone_bound as frozen in H00_HullAngle_SCAFFOLD.lean:131-141 is FALSE. hper/hmem/hsurj make p an arbitrary bijection Z/h -> hullPts S; nothing pins the cyclic order, so p i and p (i+2) are not the hull-neighbours of p (i+1) and the listed angle is not the interior angle. Two independent kernel witnesses, one collinear and one a strictly convex quadrilateral, so non-degeneracy of S is NOT the missing hypothesis.",
+  "sealed": [
+    "Erdos1084Upper.h4_packing -- 'Erdos1084Upper.h4_packing' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.h4_halfplane_theta -- 'Erdos1084Upper.h4_halfplane_theta' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.h4_cone_packing -- 'Erdos1084Upper.h4_cone_packing' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.h4_hull_udeg_le_four -- 'Erdos1084Upper.h4_hull_udeg_le_four' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.h4_hull_udeg_le_four' -- 'Erdos1084Upper.h4_hull_udeg_le_four'' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.h4_hull_degree_sum_le -- 'Erdos1084Upper.h4_hull_degree_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.notMem_interior_of_le -- 'Erdos1084Upper.notMem_interior_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.mem_frontier_of_le -- 'Erdos1084Upper.mem_frontier_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.h4_cone_bound_false -- 'Erdos1084Upper.h4_cone_bound_false' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.h4_cone_bound_false_nondegenerate -- 'Erdos1084Upper.h4_cone_bound_false_nondegenerate' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "open": [
+    "Erdos1084Upper.h4_cone_bound -- frozen byte-identical, kept as `sorry` so the coordinator's diff stays clean. 'Erdos1084Upper.h4_cone_bound' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]. DO NOT ATTEMPT TO PROVE IT: refuted by the two witnesses above.",
+    "THE TRUE H4 = h4_cone_packing (SEALED) + an aperture supplier. What is missing is not the packing and not the half-plane; it is the cyclic-order fact that the hull cone at p (i+1) is spanned by p i and p (i+2). That fact lives in H2/H3, not H4."
+  ],
+  "repair": "Re-freeze H4 carrying H3's binders verbatim (v0 in interior, hne, the `< pi` consecutive-gap clause, the `= 2 * pi` central-sum clause), which force p to be the argument-sorted listing about an interior point; then discharge it by feeding h4_cone_packing an aperture. Alternatively drop the listing entirely and use h4_cone_packing as the rung, since it is already the general statement.",
+  "witness_a_collinear": "S = {(0,0),(2,0),(1,0),(3,0)}; p = that order, period 4; i = 0 gives w = (2,0), udeg = 2, angle (0,0) (2,0) (1,0) = 0, bound reads 2 <= 1.",
+  "witness_b_convex_quadrilateral": "S = {(0,0),(1,0),(10,1),(0,1)}, all four strict maximisers of explicit functionals so all four are hull vertices and the hull has nonempty interior; p = (1,0),(0,0),(10,1),(0,1), period 4; i = 0 gives w = (0,0), udeg = 2 (neighbours (1,0),(0,1)), angle (1,0) (0,0) (10,1) = arctan(1/10) < pi/3, bound reads 2 <= 1 + 3*(<pi/3)/pi < 2.",
+  "next_command": "ssh root@51.158.234.15 'cd /root/formalizer/proofs && export PATH=/root/.elan/bin:$PATH && nice -n 10 lake env lean /root/peer/sub-h4/H04_ConeBound.lean'"
+}

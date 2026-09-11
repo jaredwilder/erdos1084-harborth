@@ -1,0 +1,7 @@
+/root/peer/e1084-upper/O09_UnitDistNumEqEdges_SCAFFOLD.lean:77:10: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+
+S : Finset (ℝ^2)
+⊢ Std.Irrefl fun u w => dist ↑u ↑w = 1
+/root/peer/e1084-upper/O09_UnitDistNumEqEdges_SCAFFOLD.lean:87:8: warning: declaration uses `sorry`
+Command exited with non-zero status 1
+2.99 s

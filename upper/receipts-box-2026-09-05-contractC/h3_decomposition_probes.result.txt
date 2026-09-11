@@ -1,0 +1,5 @@
+=== h3probe3: sorted polar data alone
+HULL-INTERIOR COUNTEREXAMPLE 5 [(4.569, 0.016), (0.615, 2.378), (-3.711, 3.209), (1.21, -1.726), (0.532, -0.143)] vertex 4
+configs 11258 failing InsideAngleAt without hull condition: 7215 | still failing WITH v0 strictly interior: 7215
+=== h3probe4: hull vertices, v0 interior
+configs tested 30000 InsideAngleAt FAILURES 0

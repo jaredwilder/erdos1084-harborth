@@ -1,0 +1,55 @@
+/root/peer/sub-o05/O05_DegreeSumBound.lean:112:2: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/sub-o05/O05_DegreeSumBound.lean:133:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/sub-o05/O05_DegreeSumBound.lean:195:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-o05/O05_DegreeSumBound.lean:195:8: warning: 'exact le_of_eq (abs_sub_comm _ _)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-o05/O05_DegreeSumBound.lean:225:2: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/sub-o05/O05_DegreeSumBound.lean:268:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-o05/O05_DegreeSumBound.lean:268:6: warning: 'rw [div_lt_one₀ hpi] at habs' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-o05/O05_DegreeSumBound.lean:282:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-o05/O05_DegreeSumBound.lean:282:8: warning: 'simp [Erdos1084Upper.udeg, Erdos1084Upper.nbrs]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-o05/O05_DegreeSumBound.lean:294:8: warning: declaration uses `sorry`
+/root/peer/sub-o05/O05_DegreeSumBound.lean:320:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-o05/O05_DegreeSumBound.lean:320:8: warning: '(rw [Finset.card_sdiff, Finset.inter_eq_left.mpr hHsub]; omega)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-o05/O05_DegreeSumBound.lean:343:23: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'o01_sixty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'abs_toReal_coe_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'o02_argument_function' depends on axioms: [propext, Classical.choice, Quot.sound]
+'o03_interior_degree_le_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+'o03_udeg_le_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+'o05_degree_sum_bound' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

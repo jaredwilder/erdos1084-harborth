@@ -1,0 +1,2 @@
+/tmp/axprobe/L02_IdxUnitNum_SCAFFOLD.lean:58:8: warning: declaration uses `sorry`
+'idx_unitnum_step' depends on axioms: [propext]

@@ -1,0 +1,2 @@
+/tmp/axprobe/L01_IdxCard_SCAFFOLD.lean:61:8: warning: declaration uses `sorry`
+'idx_card_arith' depends on axioms: [propext]

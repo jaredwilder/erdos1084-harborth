@@ -1,0 +1,360 @@
+@finrank_euclideanSpace_fin : ∀ {𝕜 : Type u_1} [inst : RCLike 𝕜] {n : ℕ},
+  Module.finrank 𝕜 (EuclideanSpace 𝕜 (Fin n)) = n
+EuclideanSpace.basisFun : (ι : Type u_1) →
+  (𝕜 : Type u_2) → [inst : RCLike 𝕜] → [inst_1 : Fintype ι] → OrthonormalBasis ι 𝕜 (EuclideanSpace 𝕜 ι)
+hullprobe1.lean:13:8: error(lean.unknownIdentifier): Unknown identifier `Basis.orientation`
+Module.Oriented : (R : Type u_1) →
+  [inst : CommSemiring R] →
+    [inst_1 : PartialOrder R] →
+      [IsStrictOrderedRing R] →
+        (M : Type u_2) → [inst_3 : AddCommMonoid M] → [Module R M] → Type u_3 → Type (max (max u_1 u_2) u_3)
+@positiveOrientation : {R : Type u_1} →
+  {inst : CommSemiring R} →
+    {inst_1 : PartialOrder R} →
+      {inst_2 : IsStrictOrderedRing R} →
+        {M : Type u_2} →
+          {inst_3 : AddCommMonoid M} →
+            {inst_4 : Module R M} → {ι : Type u_3} → [self : Module.Oriented R M ι] → Orientation R M ι
+hullprobe1.lean:19:0: error: failed to synthesize
+  Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 2)) = 2)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+hullprobe1.lean:20:0: error: failed to synthesize
+  Module.Oriented ℝ (EuclideanSpace ℝ (Fin 2)) (Fin 2)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+@angle : {V : Type u_1} →
+  {P : Type u_2} →
+    [inst : NormedAddCommGroup V] →
+      [InnerProductSpace ℝ V] → [inst_2 : MetricSpace P] → [NormedAddTorsor V P] → P → P → P → ℝ
+@angle_add_angle_add_angle_eq_pi : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] {p₁ p₂ : P} (p₃ : P),
+  p₂ ≠ p₁ → ∠ p₁ p₂ p₃ + ∠ p₂ p₃ p₁ + ∠ p₃ p₁ p₂ = π
+@angle_nonneg : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] (p₁ p₂ p₃ : P), 0 ≤ ∠ p₁ p₂ p₃
+@angle_le_pi : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] (p₁ p₂ p₃ : P), ∠ p₁ p₂ p₃ ≤ π
+@angle_comm : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] (p₁ p₂ p₃ : P), ∠ p₁ p₂ p₃ = ∠ p₃ p₂ p₁
+@law_cos : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] (p₁ p₂ p₃ : P),
+  dist p₁ p₃ * dist p₁ p₃ =
+    dist p₁ p₂ * dist p₁ p₂ + dist p₃ p₂ * dist p₃ p₂ - 2 * dist p₁ p₂ * dist p₃ p₂ * cos (∠ p₁ p₂ p₃)
+@angle_add_angle_eq_pi_of_angle_eq_pi : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] (p₁ : P) {p₂ p₃ p₄ : P},
+  ∠ p₂ p₃ p₄ = π → ∠ p₁ p₃ p₂ + ∠ p₁ p₃ p₄ = π
+@angle_eq_pi_iff_sbtw : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] {p₁ p₂ p₃ : P}, ∠ p₁ p₂ p₃ = π ↔ Sbtw ℝ p₁ p₂ p₃
+@angle_eq_zero_iff_ne_and_wbtw : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] {p₁ p₂ p₃ : P},
+  ∠ p₁ p₂ p₃ = 0 ↔ p₁ ≠ p₂ ∧ Wbtw ℝ p₂ p₁ p₃ ∨ p₃ ≠ p₂ ∧ Wbtw ℝ p₂ p₃ p₁
+@exterior_angle_eq_angle_add_angle : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] {p₁ p₂ p₃ : P} (p : P),
+  Sbtw ℝ p p₁ p₂ → ∠ p₃ p₁ p = ∠ p₁ p₃ p₂ + ∠ p₃ p₂ p₁
+@Orientation.oangle : {V : Type u_1} →
+  [inst : NormedAddCommGroup V] →
+    [inst_1 : InnerProductSpace ℝ V] → [Fact (Module.finrank ℝ V = 2)] → Orientation ℝ V (Fin 2) → V → V → Angle
+@Orientation.oangle_add : ∀ {V : Type u_1} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y z : V},
+  x ≠ 0 → y ≠ 0 → z ≠ 0 → o.oangle x y + o.oangle y z = o.oangle x z
+@Orientation.oangle_add_swap : ∀ {V : Type u_1} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y z : V},
+  x ≠ 0 → y ≠ 0 → z ≠ 0 → o.oangle y z + o.oangle x y = o.oangle x z
+@Orientation.oangle_sub_left : ∀ {V : Type u_1} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y z : V},
+  x ≠ 0 → y ≠ 0 → z ≠ 0 → o.oangle x z - o.oangle x y = o.oangle y z
+@Orientation.oangle_sub_right : ∀ {V : Type u_1} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y z : V},
+  x ≠ 0 → y ≠ 0 → z ≠ 0 → o.oangle x z - o.oangle y z = o.oangle x y
+@Orientation.oangle_add_cyc3 : ∀ {V : Type u_1} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y z : V},
+  x ≠ 0 → y ≠ 0 → z ≠ 0 → o.oangle x y + o.oangle y z + o.oangle z x = 0
+@Orientation.oangle_rev : ∀ {V : Type u_1} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) (x y : V), o.oangle y x = -o.oangle x y
+@Orientation.angle_eq_abs_oangle_toReal : ∀ {V : Type u_1} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y : V},
+  x ≠ 0 → y ≠ 0 → InnerProductGeometry.angle x y = |(o.oangle x y).toReal|
+@Orientation.oangle_eq_angle_or_eq_neg_angle : ∀ {V : Type u_1} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y : V},
+  x ≠ 0 → y ≠ 0 → o.oangle x y = ↑(InnerProductGeometry.angle x y) ∨ o.oangle x y = -↑(InnerProductGeometry.angle x y)
+@Orientation.oangle_eq_zero_iff_sameRay : ∀ {V : Type u_1} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y : V},
+  o.oangle x y = 0 ↔ SameRay ℝ x y
+@Orientation.oangle_eq_pi_iff_sameRay_neg : ∀ {V : Type u_1} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y : V},
+  o.oangle x y = ↑π ↔ x ≠ 0 ∧ y ≠ 0 ∧ SameRay ℝ x (-y)
+@Orientation.oangle_ne_zero_and_ne_pi_iff_linearIndependent : ∀ {V : Type u_1} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y : V},
+  o.oangle x y ≠ 0 ∧ o.oangle x y ≠ ↑π ↔ LinearIndependent ℝ ![x, y]
+@Orientation.oangle_smul_left_of_pos : ∀ {V : Type u_1} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) (x y : V) {r : ℝ},
+  0 < r → o.oangle (r • x) y = o.oangle x y
+@Orientation.rotation : {V : Type u_1} →
+  [inst : NormedAddCommGroup V] →
+    [inst_1 : InnerProductSpace ℝ V] → [Fact (Module.finrank ℝ V = 2)] → Orientation ℝ V (Fin 2) → Angle → V ≃ₗᵢ[ℝ] V
+@Orientation.oangle_map : ∀ {V : Type u_1} {V' : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : NormedAddCommGroup V'] [inst_2 : InnerProductSpace ℝ V] [inst_3 : InnerProductSpace ℝ V']
+  [inst_4 : Fact (Module.finrank ℝ V = 2)] [inst_5 : Fact (Module.finrank ℝ V' = 2)] (o : Orientation ℝ V (Fin 2))
+  (x y : V') (f : V ≃ₗᵢ[ℝ] V'),
+  ((Orientation.map (Fin 2) f.toLinearEquiv) o).oangle x y = o.oangle (f.symm x) (f.symm y)
+@oangle : {V : Type u_1} →
+  {P : Type u_2} →
+    [inst : NormedAddCommGroup V] →
+      [inst_1 : InnerProductSpace ℝ V] →
+        [inst_2 : MetricSpace P] →
+          [NormedAddTorsor V P] →
+            [hd2 : Fact (Module.finrank ℝ V = 2)] → [Module.Oriented ℝ V (Fin 2)] → P → P → P → Angle
+@oangle_add : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] [hd2 : Fact (Module.finrank ℝ V = 2)]
+  [inst_4 : Module.Oriented ℝ V (Fin 2)] {p p₁ p₂ p₃ : P}, p₁ ≠ p → p₂ ≠ p → p₃ ≠ p → ∡ p₁ p p₂ + ∡ p₂ p p₃ = ∡ p₁ p p₃
+@oangle_add_swap : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] [hd2 : Fact (Module.finrank ℝ V = 2)]
+  [inst_4 : Module.Oriented ℝ V (Fin 2)] {p p₁ p₂ p₃ : P}, p₁ ≠ p → p₂ ≠ p → p₃ ≠ p → ∡ p₂ p p₃ + ∡ p₁ p p₂ = ∡ p₁ p p₃
+@oangle_sub_left : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] [hd2 : Fact (Module.finrank ℝ V = 2)]
+  [inst_4 : Module.Oriented ℝ V (Fin 2)] {p p₁ p₂ p₃ : P}, p₁ ≠ p → p₂ ≠ p → p₃ ≠ p → ∡ p₁ p p₃ - ∡ p₁ p p₂ = ∡ p₂ p p₃
+@oangle_sub_right : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] [hd2 : Fact (Module.finrank ℝ V = 2)]
+  [inst_4 : Module.Oriented ℝ V (Fin 2)] {p p₁ p₂ p₃ : P}, p₁ ≠ p → p₂ ≠ p → p₃ ≠ p → ∡ p₁ p p₃ - ∡ p₂ p p₃ = ∡ p₁ p p₂
+@oangle_add_cyc3 : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] [hd2 : Fact (Module.finrank ℝ V = 2)]
+  [inst_4 : Module.Oriented ℝ V (Fin 2)] {p p₁ p₂ p₃ : P},
+  p₁ ≠ p → p₂ ≠ p → p₃ ≠ p → ∡ p₁ p p₂ + ∡ p₂ p p₃ + ∡ p₃ p p₁ = 0
+@oangle_rev : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] [hd2 : Fact (Module.finrank ℝ V = 2)]
+  [inst_4 : Module.Oriented ℝ V (Fin 2)] (p₁ p₂ p₃ : P), ∡ p₃ p₂ p₁ = -∡ p₁ p₂ p₃
+@angle_eq_abs_oangle_toReal : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P]
+  [hd2 : Fact (Module.finrank ℝ V = 2)] [inst_4 : Module.Oriented ℝ V (Fin 2)] {p p₁ p₂ : P},
+  p₁ ≠ p → p₂ ≠ p → ∠ p₁ p p₂ = |(∡ p₁ p p₂).toReal|
+@oangle_eq_angle_or_eq_neg_angle : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P]
+  [hd2 : Fact (Module.finrank ℝ V = 2)] [inst_4 : Module.Oriented ℝ V (Fin 2)] {p p₁ p₂ : P},
+  p₁ ≠ p → p₂ ≠ p → ∡ p₁ p p₂ = ↑(∠ p₁ p p₂) ∨ ∡ p₁ p p₂ = -↑(∠ p₁ p p₂)
+@oangle_eq_zero_or_eq_pi_iff_collinear : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P]
+  [hd2 : Fact (Module.finrank ℝ V = 2)] [inst_4 : Module.Oriented ℝ V (Fin 2)] {p₁ p₂ p₃ : P},
+  ∡ p₁ p₂ p₃ = 0 ∨ ∡ p₁ p₂ p₃ = ↑π ↔ Collinear ℝ {p₁, p₂, p₃}
+@oangle_ne_zero_and_ne_pi_iff_affineIndependent : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P]
+  [hd2 : Fact (Module.finrank ℝ V = 2)] [inst_4 : Module.Oriented ℝ V (Fin 2)] {p₁ p₂ p₃ : P},
+  ∡ p₁ p₂ p₃ ≠ 0 ∧ ∡ p₁ p₂ p₃ ≠ ↑π ↔ AffineIndependent ℝ ![p₁, p₂, p₃]
+@oangle_eq_pi_iff_sbtw : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] [hd2 : Fact (Module.finrank ℝ V = 2)]
+  [inst_4 : Module.Oriented ℝ V (Fin 2)] {p₁ p₂ p₃ : P}, ∡ p₁ p₂ p₃ = ↑π ↔ Sbtw ℝ p₁ p₂ p₃
+@oangle_eq_zero_iff_wbtw : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P]
+  [hd2 : Fact (Module.finrank ℝ V = 2)] [inst_4 : Module.Oriented ℝ V (Fin 2)] {p₁ p₂ p₃ : P},
+  ∡ p₁ p₂ p₃ = 0 ↔ Wbtw ℝ p₂ p₁ p₃ ∨ Wbtw ℝ p₂ p₃ p₁
+@oangle_sign_eq_zero_iff_collinear : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P]
+  [hd2 : Fact (Module.finrank ℝ V = 2)] [inst_4 : Module.Oriented ℝ V (Fin 2)] {p₁ p₂ p₃ : P},
+  (∡ p₁ p₂ p₃).sign = 0 ↔ Collinear ℝ {p₁, p₂, p₃}
+@AffineSubspace.SSameSide.oangle_sign_eq : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P]
+  [hd2 : Fact (Module.finrank ℝ V = 2)] [inst_4 : Module.Oriented ℝ V (Fin 2)] {s : AffineSubspace ℝ P}
+  {p₁ p₂ p₃ p₄ : P}, p₁ ∈ s → p₂ ∈ s → s.SSameSide p₃ p₄ → (∡ p₁ p₄ p₂).sign = (∡ p₁ p₃ p₂).sign
+@AffineSubspace.SOppSide.oangle_sign_eq_neg : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P]
+  [hd2 : Fact (Module.finrank ℝ V = 2)] [inst_4 : Module.Oriented ℝ V (Fin 2)] {s : AffineSubspace ℝ P}
+  {p₁ p₂ p₃ p₄ : P}, p₁ ∈ s → p₂ ∈ s → s.SOppSide p₃ p₄ → (∡ p₁ p₄ p₂).sign = -(∡ p₁ p₃ p₂).sign
+@angle_eq_angle_div_two_of_oangle_eq_of_sSameSide : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P]
+  [hd2 : Fact (Module.finrank ℝ V = 2)] [inst_4 : Module.Oriented ℝ V (Fin 2)] {p₁ p₂ p₃ p₄ : P},
+  p₁ ≠ p₂ → ∡ p₁ p₂ p₃ = ∡ p₃ p₂ p₄ → (affineSpan ℝ {p₁, p₂}).SSameSide p₃ p₄ → ∠ p₁ p₂ p₃ = ∠ p₁ p₂ p₄ / 2
+Angle.toReal : Angle → ℝ
+Angle.neg_pi_lt_toReal : ∀ (θ : Angle), -π < θ.toReal
+Angle.toReal_le_pi : ∀ (θ : Angle), θ.toReal ≤ π
+Angle.abs_toReal_le_pi : ∀ (θ : Angle), |θ.toReal| ≤ π
+@Angle.toReal_coe_eq_self_iff : ∀ {θ : ℝ}, (↑θ).toReal = θ ↔ -π < θ ∧ θ ≤ π
+Angle.coe_toReal : ∀ (θ : Angle), ↑θ.toReal = θ
+Angle.coe_sub : ∀ (x y : ℝ), ↑(x - y) = ↑x - ↑y
+Angle.coe_add : ∀ (x y : ℝ), ↑(x + y) = ↑x + ↑y
+Angle.toReal_injective : Function.Injective Angle.toReal
+Angle.sign : Angle → SignType
+@Angle.sign_eq_zero_iff : ∀ {θ : Angle}, θ.sign = 0 ↔ θ = 0 ∨ θ = ↑π
+Angle.toReal_pi : (↑π).toReal = π
+Angle.instCircularOrder
+hullprobe1.lean:85:0: error: failed to synthesize
+  LinearOrder Angle
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+convexHull : (𝕜 : Type u_1) →
+  {E : Type u_2} →
+    [inst : Semiring 𝕜] → [PartialOrder 𝕜] → [inst_2 : AddCommMonoid E] → [Module 𝕜 E] → ClosureOperator (Set E)
+@Set.Finite.isCompact_convexHull : ∀ {E : Type u_1} (𝕜 : Type u_2) [inst : Field 𝕜] [inst_1 : LinearOrder 𝕜]
+  [IsStrictOrderedRing 𝕜] [inst_3 : TopologicalSpace 𝕜] [OrderClosedTopology 𝕜] [CompactIccSpace 𝕜] [ContinuousAdd 𝕜]
+  [inst_7 : AddCommGroup E] [inst_8 : Module 𝕜 E] [inst_9 : TopologicalSpace E] [IsTopologicalAddGroup E]
+  [ContinuousSMul 𝕜 E] {s : Set E}, s.Finite → IsCompact ((convexHull 𝕜) s)
+@Set.Finite.isClosed_convexHull : ∀ {E : Type u_1} (𝕜 : Type u_2) [inst : Field 𝕜] [inst_1 : LinearOrder 𝕜]
+  [IsStrictOrderedRing 𝕜] [inst_3 : TopologicalSpace 𝕜] [OrderClosedTopology 𝕜] [CompactIccSpace 𝕜] [ContinuousAdd 𝕜]
+  [inst_7 : AddCommGroup E] [inst_8 : Module 𝕜 E] [inst_9 : TopologicalSpace E] [IsTopologicalAddGroup E]
+  [ContinuousSMul 𝕜 E] [T2Space E] {s : Set E}, s.Finite → IsClosed ((convexHull 𝕜) s)
+@Set.Finite.convexHull_eq : ∀ {R : Type u_1} {E : Type u_2} [inst : Field R] [inst_1 : AddCommGroup E]
+  [inst_2 : Module R E] [inst_3 : LinearOrder R] [IsStrictOrderedRing R] {s : Set E} (hs : s.Finite),
+  (convexHull R) s = {x | ∃ w, (∀ y ∈ s, 0 ≤ w y) ∧ ∑ y ∈ hs.toFinset, w y = 1 ∧ hs.toFinset.centerMass w id = x}
+@Finset.convexHull_eq : ∀ {R : Type u_1} {E : Type u_2} [inst : Field R] [inst_1 : AddCommGroup E] [inst_2 : Module R E]
+  [inst_3 : LinearOrder R] [IsStrictOrderedRing R] (s : Finset E),
+  (convexHull R) ↑s = {x | ∃ w, (∀ y ∈ s, 0 ≤ w y) ∧ ∑ y ∈ s, w y = 1 ∧ s.centerMass w id = x}
+@convexHull_eq_union : ∀ {𝕜 : Type u_2} {E : Type u_1} [inst : Field 𝕜] [inst_1 : LinearOrder 𝕜] [IsStrictOrderedRing 𝕜]
+  [inst_3 : AddCommGroup E] [inst_4 : Module 𝕜 E] {s : Set E},
+  (convexHull 𝕜) s = ⋃ t, ⋃ (_ : ↑t ⊆ s), ⋃ (_ : AffineIndependent 𝕜 Subtype.val), (convexHull 𝕜) ↑t
+Set.extremePoints : (𝕜 : Type u_1) →
+  {E : Type u_2} → [Semiring 𝕜] → [PartialOrder 𝕜] → [AddCommMonoid E] → [SMul 𝕜 E] → Set E → Set E
+@extremePoints_convexHull_subset : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Ring 𝕜] [inst_1 : LinearOrder 𝕜]
+  [IsStrictOrderedRing 𝕜] [inst_3 : AddCommGroup E] [inst_4 : Module 𝕜 E] [DenselyOrdered 𝕜] [Module.IsTorsionFree 𝕜 E]
+  {A : Set E}, Set.extremePoints 𝕜 ((convexHull 𝕜) A) ⊆ A
+@mem_extremePoints : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Semiring 𝕜] [inst_1 : PartialOrder 𝕜]
+  [inst_2 : AddCommMonoid E] [inst_3 : SMul 𝕜 E] {A : Set E} {x : E},
+  x ∈ Set.extremePoints 𝕜 A ↔ x ∈ A ∧ ∀ x₁ ∈ A, ∀ x₂ ∈ A, x ∈ openSegment 𝕜 x₁ x₂ → x₁ = x ∧ x₂ = x
+@Convex.mem_extremePoints_iff_mem_diff_convexHull_diff : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Ring 𝕜]
+  [inst_1 : LinearOrder 𝕜] [IsStrictOrderedRing 𝕜] [inst_3 : AddCommGroup E] [inst_4 : Module 𝕜 E] [DenselyOrdered 𝕜]
+  [Module.IsTorsionFree 𝕜 E] {A : Set E} {x : E},
+  Convex 𝕜 A → (x ∈ Set.extremePoints 𝕜 A ↔ x ∈ A \ (convexHull 𝕜) (A \ {x}))
+@Convex.mem_extremePoints_iff_convex_diff : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Ring 𝕜] [inst_1 : LinearOrder 𝕜]
+  [IsStrictOrderedRing 𝕜] [inst_3 : AddCommGroup E] [inst_4 : Module 𝕜 E] [DenselyOrdered 𝕜] [Module.IsTorsionFree 𝕜 E]
+  {A : Set E} {x : E}, Convex 𝕜 A → (x ∈ Set.extremePoints 𝕜 A ↔ x ∈ A ∧ Convex 𝕜 (A \ {x}))
+@IsCompact.extremePoints_nonempty : ∀ {E : Type u_1} [inst : AddCommGroup E] [inst_1 : Module ℝ E]
+  [inst_2 : TopologicalSpace E] [T2Space E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] [LocallyConvexSpace ℝ E]
+  {s : Set E}, IsCompact s → s.Nonempty → (Set.extremePoints ℝ s).Nonempty
+@closure_convexHull_extremePoints : ∀ {E : Type u_1} [inst : AddCommGroup E] [inst_1 : Module ℝ E]
+  [inst_2 : TopologicalSpace E] [T2Space E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] [LocallyConvexSpace ℝ E]
+  {s : Set E}, IsCompact s → Convex ℝ s → closure ((convexHull ℝ) (Set.extremePoints ℝ s)) = s
+IsExposed : (𝕜 : Type u_1) →
+  {E : Type u_2} →
+    [TopologicalSpace 𝕜] →
+      [inst : Semiring 𝕜] →
+        [Preorder 𝕜] → [inst_2 : AddCommMonoid E] → [TopologicalSpace E] → [Module 𝕜 E] → Set E → Set E → Prop
+Set.exposedPoints : (𝕜 : Type u_1) →
+  {E : Type u_2} →
+    [TopologicalSpace 𝕜] →
+      [inst : Ring 𝕜] →
+        [PartialOrder 𝕜] → [inst_2 : AddCommMonoid E] → [TopologicalSpace E] → [Module 𝕜 E] → Set E → Set E
+@exposedPoints_subset_extremePoints : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : TopologicalSpace 𝕜] [inst_1 : Ring 𝕜]
+  [inst_2 : LinearOrder 𝕜] [IsStrictOrderedRing 𝕜] [inst_4 : AddCommMonoid E] [inst_5 : TopologicalSpace E]
+  [inst_6 : Module 𝕜 E] {A : Set E}, Set.exposedPoints 𝕜 A ⊆ Set.extremePoints 𝕜 A
+@IsExposed.eq_inter_halfSpace : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : TopologicalSpace 𝕜] [inst_1 : Ring 𝕜]
+  [inst_2 : PartialOrder 𝕜] [inst_3 : AddCommMonoid E] [inst_4 : TopologicalSpace E] [inst_5 : Module 𝕜 E]
+  [IsOrderedRing 𝕜] [Nontrivial 𝕜] {A B : Set E}, IsExposed 𝕜 A B → ∃ l a, B = {x | x ∈ A ∧ a ≤ l x}
+ConvexIndependent : (𝕜 : Type u_1) →
+  {E : Type u_2} →
+    {ι : Type u_3} → [inst : Semiring 𝕜] → [PartialOrder 𝕜] → [inst_2 : AddCommGroup E] → [Module 𝕜 E] → (ι → E) → Prop
+@Convex.convexIndependent_extremePoints : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Field 𝕜] [inst_1 : LinearOrder 𝕜]
+  [IsStrictOrderedRing 𝕜] [inst_3 : AddCommGroup E] [inst_4 : Module 𝕜 E] {s : Set E},
+  Convex 𝕜 s → ConvexIndependent 𝕜 Subtype.val
+@convexIndependent_set_iff_notMem_convexHull_diff : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Semiring 𝕜]
+  [inst_1 : PartialOrder 𝕜] [inst_2 : AddCommGroup E] [inst_3 : Module 𝕜 E] {s : Set E},
+  ConvexIndependent 𝕜 Subtype.val ↔ ∀ x ∈ s, x ∉ (convexHull 𝕜) (s \ {x})
+IsVisible : (𝕜 : Type u_1) →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      [inst : Field 𝕜] →
+        [LinearOrder 𝕜] → [inst_2 : AddCommGroup V] → [Module 𝕜 V] → [AffineSpace V P] → Set P → P → P → Prop
+@IsClosed.exists_wbtw_isVisible : ∀ {V : Type u_1} [inst : AddCommGroup V] [inst_1 : Module ℝ V] {s : Set V} {y : V}
+  [inst_2 : TopologicalSpace V] [IsTopologicalAddGroup V] [ContinuousSMul ℝ V],
+  IsClosed s → y ∈ s → ∀ (x : V), ∃ z ∈ s, Wbtw ℝ x z y ∧ IsVisible ℝ s x z
+@geometric_hahn_banach_point_closed : ∀ {E : Type u_1} [inst : TopologicalSpace E] [inst_1 : AddCommGroup E]
+  [inst_2 : Module ℝ E] {t : Set E} {x : E} [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] [LocallyConvexSpace ℝ E],
+  Convex ℝ t → IsClosed t → x ∉ t → ∃ f u, f x < u ∧ ∀ b ∈ t, u < f b
+@geometric_hahn_banach_closed_point : ∀ {E : Type u_1} [inst : TopologicalSpace E] [inst_1 : AddCommGroup E]
+  [inst_2 : Module ℝ E] {s : Set E} {x : E} [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] [LocallyConvexSpace ℝ E],
+  Convex ℝ s → IsClosed s → x ∉ s → ∃ f u, (∀ a ∈ s, f a < u) ∧ u < f x
+@AffineSubspace.SSameSide : {R : Type u_1} →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      [inst : CommRing R] →
+        [inst_1 : PartialOrder R] →
+          [IsStrictOrderedRing R] →
+            [inst_3 : AddCommGroup V] →
+              [inst_4 : Module R V] → [inst_5 : AffineSpace V P] → AffineSubspace R P → P → P → Prop
+@AffineSubspace.WSameSide : {R : Type u_1} →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      [inst : CommRing R] →
+        [inst_1 : PartialOrder R] →
+          [IsStrictOrderedRing R] →
+            [inst_3 : AddCommGroup V] →
+              [inst_4 : Module R V] → [inst_5 : AffineSpace V P] → AffineSubspace R P → P → P → Prop
+@AffineSubspace.SOppSide : {R : Type u_1} →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      [inst : CommRing R] →
+        [inst_1 : PartialOrder R] →
+          [IsStrictOrderedRing R] →
+            [inst_3 : AddCommGroup V] →
+              [inst_4 : Module R V] → [inst_5 : AffineSpace V P] → AffineSubspace R P → P → P → Prop
+@orderIsoOfFin : {α : Type u_1} → [inst : LinearOrder α] → (s : Finset α) → {k : ℕ} → #s = k → Fin k ≃o ↥s
+@orderEmbOfFin : {α : Type u_1} → [inst : LinearOrder α] → (s : Finset α) → {k : ℕ} → #s = k → Fin k ↪o α
+@sort : {α : Type u_1} →
+  Finset α →
+    (r : autoParam (α → α → Prop) sort._auto_1) →
+      [DecidableRel r] → [IsTrans α r] → [Std.Antisymm r] → [Std.Total r] → List α
+@sortedLT_sort : ∀ {α : Type u_1} [inst : LinearOrder α] (s : Finset α), (s.sort fun a b => a ≤ b).SortedLT
+@orderEmbOfFin_mem : ∀ {α : Type u_1} [inst : LinearOrder α] (s : Finset α) {k : ℕ} (h : #s = k) (i : Fin k),
+  (s.orderEmbOfFin h) i ∈ s
+@range_orderEmbOfFin : ∀ {α : Type u_1} [inst : LinearOrder α] (s : Finset α) {k : ℕ} (h : #s = k),
+  Set.range ⇑(s.orderEmbOfFin h) = ↑s
+hullprobe1.lean:125:8: error(lean.unknownIdentifier): Unknown constant `Fintype.monoEquivOfFin`
+@sum_range_sub : ∀ {G : Type u_1} [inst : AddCommGroup G] (f : ℕ → G) (n : ℕ),
+  ∑ i ∈ range n, (f (i + 1) - f i) = f n - f 0
+finRotate : (n : ℕ) → Equiv.Perm (Fin n)
+hullprobe1.lean:128:8: warning: `finRotate_succ_apply` has been deprecated: Use `finRotate_apply` instead
+
+Note: The updated constant has a different type:
+  ∀ {n : ℕ} (i : Fin n), (finRotate n) i = i + 1
+instead of
+  ∀ {n : ℕ} (i : Fin (n + 1)), (finRotate (n + 1)) i = i + 1
+@finRotate_succ_apply : ∀ {n : ℕ} (i : Fin (n + 1)), (finRotate (n + 1)) i = i + 1
+Polygon : Type u_1 → ℕ → Type u_1
+@Polygon.vertices : {P : Type u_1} → {n : ℕ} → Polygon P n → Fin n → P
+@Polygon.HasNondegenerateEdges : {P : Type u_1} → {n : ℕ} → Polygon P n → Prop
+Polygon.HasNondegenerateVertices : (R : Type u_1) →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      {n : ℕ} →
+        [inst : Ring R] → [inst_1 : AddCommGroup V] → [Module R V] → [AffineSpace V P] → [NeZero n] → Polygon P n → Prop
+Polygon.edgePath : (R : Type u_1) →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      {n : ℕ} →
+        [inst : Ring R] →
+          [inst_1 : AddCommGroup V] →
+            [inst_2 : Module R V] → [inst_3 : AffineSpace V P] → Polygon P n → Fin n → R →ᵃ[R] P
+Polygon.edgeSet : (R : Type u_1) →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      {n : ℕ} →
+        [inst : Ring R] →
+          [inst_1 : AddCommGroup V] → [Module R V] → [AffineSpace V P] → [PartialOrder R] → Polygon P n → Fin n → Set P
+Polygon.boundary : (R : Type u_1) →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      {n : ℕ} →
+        [inst : Ring R] →
+          [inst_1 : AddCommGroup V] → [Module R V] → [AffineSpace V P] → [PartialOrder R] → Polygon P n → Set P
+Polygon.toTriangle : (R : Type u_1) →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      [inst : Ring R] →
+        [inst_1 : AddCommGroup V] →
+          [inst_2 : Module R V] →
+            [inst_3 : AffineSpace V P] → (p : Polygon P 3) → Polygon.HasNondegenerateVertices R p → Affine.Triangle R P
+@Affine.Triangle.toPolygon : {R : Type u_1} →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      [inst : Ring R] →
+        [inst_1 : AddCommGroup V] →
+          [inst_2 : Module R V] → [inst_3 : AffineSpace V P] → Affine.Triangle R P ↪ Polygon P 3
+@Polygon.HasNondegenerateVertices.three_le : ∀ {R : Type u_1} {V : Type u_2} {P : Type u_3} {n : ℕ} [inst : Ring R]
+  [inst_1 : AddCommGroup V] [inst_2 : Module R V] [inst_3 : AffineSpace V P] [inst_4 : NeZero n] [Nontrivial R]
+  {poly : Polygon P n}, Polygon.HasNondegenerateVertices R poly → 3 ≤ n
+hullprobe1.lean:143:8: error(lean.unknownIdentifier): Unknown identifier `EuclideanGeometry.interiorAngle`
+hullprobe1.lean:144:8: error(lean.unknownIdentifier): Unknown constant `Polygon.interiorAngle`
+hullprobe1.lean:145:8: error(lean.unknownIdentifier): Unknown constant `Polygon.IsConvex`
+hullprobe1.lean:146:8: error(lean.unknownIdentifier): Unknown constant `Polygon.angleSum`
+hullprobe1.lean:147:8: error(lean.unknownIdentifier): Unknown constant `Polygon.IsSimple`
+hullprobe1.lean:148:8: error(lean.unknownIdentifier): Unknown constant `Set.Finite.convexHull`
+hullprobe1.lean:149:8: error(lean.unknownIdentifier): Unknown constant `Convex.frontier`
+hullprobe1.lean:150:8: error(lean.unknownIdentifier): Unknown identifier `convexHull_frontier_eq`
+hullprobe1.lean:151:8: error(lean.unknownIdentifier): Unknown constant `Finset.sortCyclic`
+hullprobe1.lean:152:8: error(lean.unknownIdentifier): Unknown identifier `EuclideanGeometry.angle_sum_polygon`

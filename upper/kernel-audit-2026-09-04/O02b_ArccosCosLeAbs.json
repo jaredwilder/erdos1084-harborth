@@ -1,0 +1,27 @@
+{
+ "routed": true,
+ "engine": "lean",
+ "shape": "lean-file-verification",
+ "params": {
+  "path": "oracle/evidence/msl-machine/campaigns/erdos1084-harborth-2026-09-02/upper/O02b_ArccosCosLeAbs.lean"
+ },
+ "improvesPublishedBound": false,
+ "trusted": false,
+ "result": {
+  "status": "UNVERIFIED",
+  "file": "oracle/evidence/msl-machine/campaigns/erdos1084-harborth-2026-09-02/upper/O02b_ArccosCosLeAbs.lean",
+  "backend": "wsl",
+  "project": "/root/erdosfire-bench/proofs",
+  "needsMathlib": true,
+  "exitCode": 15,
+  "seconds": 413.7,
+  "declarations": [
+   {
+    "declaration": "o02b_arccos_cos_le_abs",
+    "clean": false,
+    "axioms": []
+   }
+  ],
+  "errors": []
+ }
+}

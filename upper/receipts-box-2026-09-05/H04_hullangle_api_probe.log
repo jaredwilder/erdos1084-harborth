@@ -1,0 +1,109 @@
+/root/peer/sub-h4/probe_h4.lean:12:0: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'instRCLike', which is 'noncomputable'
+InnerProductSpace.toDual : (𝕜 : Type u_1) →
+  (E : Type u_2) →
+    [inst : RCLike 𝕜] →
+      [inst_1 : NormedAddCommGroup E] → [inst_2 : InnerProductSpace 𝕜 E] → [CompleteSpace E] → E ≃ₗᵢ⋆[𝕜] StrongDual 𝕜 E
+@InnerProductSpace.toDual_symm_apply : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : RCLike 𝕜] [inst_1 : NormedAddCommGroup E]
+  [inst_2 : InnerProductSpace 𝕜 E] [inst_3 : CompleteSpace E] {x : E} {y : StrongDual 𝕜 E},
+  inner 𝕜 ((InnerProductSpace.toDual 𝕜 E).symm y) x = y x
+@InnerProductGeometry.cos_angle : ∀ {V : Type u_1} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  (x y : V), cos (InnerProductGeometry.angle x y) = inner ℝ x y / (‖x‖ * ‖y‖)
+@InnerProductGeometry.angle_le_pi : ∀ {V : Type u_1} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  (x y : V), InnerProductGeometry.angle x y ≤ π
+@InnerProductGeometry.angle_nonneg : ∀ {V : Type u_1} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  (x y : V), 0 ≤ InnerProductGeometry.angle x y
+@cos_neg_of_pi_div_two_lt_of_lt : ∀ {x : ℝ}, π / 2 < x → x < π + π / 2 → cos x < 0
+/root/peer/sub-h4/probe_h4.lean:33:2: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+@card_le_card_of_injOn : ∀ {α : Type u_1} {β : Type u_2} {s : Finset α} {t : Finset β} (f : α → β),
+  Set.MapsTo f ↑s ↑t → Set.InjOn f ↑s → #s ≤ #t
+@Int.floor_le_floor : ∀ {R : Type u_1} [inst : Ring R] [inst_1 : LinearOrder R] [inst_2 : FloorRing R] {a b : R},
+  a ≤ b → ⌊a⌋ ≤ ⌊b⌋
+@Int.floor_mono : ∀ {R : Type u_1} [inst : Ring R] [inst_1 : LinearOrder R] [inst_2 : FloorRing R], Monotone Int.floor
+@div_sub_div_same : ∀ {K : Type u_1} [inst : DivisionRing K] (a b c : K), a / c - b / c = (a - b) / c
+@Int.floor_nonneg : ∀ {α : Type u_1} [inst : Ring α] [inst_1 : LinearOrder α] [inst_2 : FloorRing α] {a : α},
+  0 ≤ ⌊a⌋ ↔ 0 ≤ a
+@Int.lt_floor_add_one : ∀ {R : Type u_1} [inst : Ring R] [inst_1 : LinearOrder R] [inst_2 : FloorRing R] (a : R),
+  a < ↑⌊a⌋ + 1
+@Orientation.angle_eq_abs_oangle_toReal : ∀ {V : Type u_1} [inst : NormedAddCommGroup V]
+  [inst_1 : InnerProductSpace ℝ V] [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y : V},
+  x ≠ 0 → y ≠ 0 → InnerProductGeometry.angle x y = |(o.oangle x y).toReal|
+@Orientation.oangle_add : ∀ {V : Type u_1} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : Fact (Module.finrank ℝ V = 2)] (o : Orientation ℝ V (Fin 2)) {x y z : V},
+  x ≠ 0 → y ≠ 0 → z ≠ 0 → o.oangle x y + o.oangle y z = o.oangle x z
+@finrank_euclideanSpace_fin : ∀ {𝕜 : Type u_1} [inst : RCLike 𝕜] {n : ℕ},
+  Module.finrank 𝕜 (EuclideanSpace 𝕜 (Fin n)) = n
+@geometric_hahn_banach_of_nonempty_interior_point : ∀ {E : Type u_1} [inst : TopologicalSpace E]
+  [inst_1 : AddCommGroup E] [inst_2 : Module ℝ E] {x : E} [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] {A : Set E},
+  Convex ℝ A → x ∉ interior A → (interior A).Nonempty → ∃ f, f ≠ 0 ∧ ∀ a ∈ A, f a ≤ f x
+@ContinuousLinearMap.ext : ∀ {R₁ : Type u_1} {R₂ : Type u_2} [inst : Semiring R₁] [inst_1 : Semiring R₂]
+  {σ₁₂ : R₁ →+* R₂} {M₁ : Type u_3} [inst_2 : TopologicalSpace M₁] [inst_3 : AddCommMonoid M₁] {M₂ : Type u_4}
+  [inst_4 : TopologicalSpace M₂] [inst_5 : AddCommMonoid M₂] [inst_6 : Module R₁ M₁] [inst_7 : Module R₂ M₂]
+  {f g : M₁ →SL[σ₁₂] M₂}, (∀ (x : M₁), f x = g x) → f = g
+@inner_zero_left : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : RCLike 𝕜] [inst_1 : SeminormedAddCommGroup E]
+  [inst_2 : InnerProductSpace 𝕜 E] (x : E), inner 𝕜 0 x = 0
+@neg_ne_zero : ∀ {α : Type u_1} [inst : SubtractionMonoid α] {a : α}, -a ≠ 0 ↔ a ≠ 0
+@ContinuousLinearMap.neg_apply : ∀ {R : Type u_1} [inst : Ring R] {R₂ : Type u_2} [inst_1 : Ring R₂] {M : Type u_3}
+  [inst_2 : TopologicalSpace M] [inst_3 : AddCommGroup M] {M₂ : Type u_4} [inst_4 : TopologicalSpace M₂]
+  [inst_5 : AddCommGroup M₂] [inst_6 : Module R M] [inst_7 : Module R₂ M₂] {σ₁₂ : R →+* R₂}
+  [inst_8 : IsTopologicalAddGroup M₂] (f : M →SL[σ₁₂] M₂) (x : M), (-f) x = -f x
+@EuclideanSpace.proj : {ι : Type u_1} → {𝕜 : Type u_2} → [inst : RCLike 𝕜] → ι → StrongDual 𝕜 (EuclideanSpace 𝕜 ι)
+@Submodule.eq_top_of_nonempty_interior' : ∀ {R : Type u_1} {M : Type u_2} [inst : Ring R] [inst_1 : TopologicalSpace R]
+  [inst_2 : TopologicalSpace M] [inst_3 : AddCommGroup M] [ContinuousAdd M] [inst_5 : Module R M] [ContinuousSMul R M]
+  [(nhdsWithin 0 {x | IsUnit x}).NeBot] (s : Submodule R M), (interior ↑s).Nonempty → s = ⊤
+@Set.Finite.isClosed_convexHull : ∀ {E : Type u_1} (𝕜 : Type u_2) [inst : Field 𝕜] [inst_1 : LinearOrder 𝕜]
+  [IsStrictOrderedRing 𝕜] [inst_3 : TopologicalSpace 𝕜] [OrderClosedTopology 𝕜] [CompactIccSpace 𝕜] [ContinuousAdd 𝕜]
+  [inst_7 : AddCommGroup E] [inst_8 : Module 𝕜 E] [inst_9 : TopologicalSpace E] [IsTopologicalAddGroup E]
+  [ContinuousSMul 𝕜 E] [T2Space E] {s : Set E}, s.Finite → IsClosed ((convexHull 𝕜) s)
+@IsClosed.frontier_eq : ∀ {X : Type u_1} [inst : TopologicalSpace X] {s : Set X},
+  IsClosed s → frontier s = s \ interior s
+@ENNReal.one_le_ofReal : ∀ {p : ℝ}, 1 ≤ ENNReal.ofReal p ↔ 1 ≤ p
+@EuclideanSpace.dist_eq : ∀ {𝕜 : Type u_1} [inst : RCLike 𝕜] {n : Type u_2} [inst_1 : Fintype n]
+  (x y : EuclideanSpace 𝕜 n), dist x y = √(∑ i, dist (x.ofLp i) (y.ofLp i) ^ 2)
+WithLp.toLp : (p : ℝ≥0∞) → {V : Type u_1} → V → WithLp p V
+@WithLp.ofLp : {p : ℝ≥0∞} → {V : Type u_1} → WithLp p V → V
+/root/peer/sub-h4/probe_h4.lean:70:42: error: unsolved goals
+⊢ dist 2 1 = 1
+/root/peer/sub-h4/probe_h4.lean:78:30: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/probe_h4.lean:78:57: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/probe_h4.lean:77:2: warning: 'first
+| rw [show (4 : ℝ) = 2 ^ 2 by norm_num, Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 2)]
+| skip' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/probe_h4.lean:85:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/sub-h4/probe_h4.lean:86:11: error: Invalid `⟨...⟩` notation: The expected type `pt2 1 0 = pt2 3 0 → False` is not an inductive type
+
+Note: This notation can only be used when the expected type is an inductive type with a single constructor
+/root/peer/sub-h4/probe_h4.lean:85:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/sub-h4/probe_h4.lean:86:11: error: Invalid `⟨...⟩` notation: The expected type `pt2 2 0 = pt2 3 0 → False` is not an inductive type
+
+Note: This notation can only be used when the expected type is an inductive type with a single constructor
+/root/peer/sub-h4/probe_h4.lean:85:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```

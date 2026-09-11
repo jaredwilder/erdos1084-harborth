@@ -1,0 +1,46 @@
+/root/peer/sub-l0102/L02_IdxUnitNum.lean:290:4: warning: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-l0102/L02_IdxUnitNum.lean:373:13: warning: This simp argument is unused:
+  Sym2.eq_iff
+
+Hint: Omit it from the simp argument list.
+  simp [e10, S̵y̵m̵2̵.̵e̵q̵_̵i̵f̵f̵,̵ ̵Prod.ext_iff] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/sub-l0102/L02_IdxUnitNum.lean:378:13: warning: This simp argument is unused:
+  Sym2.eq_iff
+
+Hint: Omit it from the simp argument list.
+  simp [e01, S̵y̵m̵2̵.̵e̵q̵_̵i̵f̵f̵,̵ ̵Prod.ext_iff] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/sub-l0102/L02_IdxUnitNum.lean:383:14: warning: This simp argument is unused:
+  Sym2.eq_iff
+
+Hint: Omit it from the simp argument list.
+  simp [e1m1, S̵y̵m̵2̵.̵e̵q̵_̵i̵f̵f̵,̵ ̵Prod.ext_iff] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/sub-l0102/L02_IdxUnitNum.lean:529:46: warning: This simp argument is unused:
+  Sym2.eq_iff
+
+Hint: Omit it from the simp argument list.
+  simp [Erdos1084L02.e10, Erdos1084L02.e01, S̵y̵m̵2̵.̵e̵q̵_̵i̵f̵f̵,̵ ̵Prod.ext_iff] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/sub-l0102/L02_IdxUnitNum.lean:539:49: warning: This simp argument is unused:
+  Sym2.eq_iff
+
+Hint: Omit it from the simp argument list.
+  simp [Erdos1084L02.e10, Erdos1084L02.e1m1, S̵y̵m̵2̵.̵e̵q̵_̵i̵f̵f̵,̵ ̵Prod.ext_iff] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/sub-l0102/L02_IdxUnitNum.lean:542:49: warning: This simp argument is unused:
+  Sym2.eq_iff
+
+Hint: Omit it from the simp argument list.
+  simp [Erdos1084L02.e01, Erdos1084L02.e1m1, S̵y̵m̵2̵.̵e̵q̵_̵i̵f̵f̵,̵ ̵Prod.ext_iff] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'l02_idx_unitnum' depends on axioms: [propext, Classical.choice, Quot.sound]

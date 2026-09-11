@@ -1,0 +1,2 @@
+/tmp/axprobe/O04_SupportingLine_SCAFFOLD.lean:37:8: warning: declaration uses `sorry`
+'o04_supporting_line' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

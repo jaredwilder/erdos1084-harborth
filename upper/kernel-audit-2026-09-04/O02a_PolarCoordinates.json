@@ -1,0 +1,35 @@
+{
+ "routed": true,
+ "engine": "lean",
+ "shape": "lean-file-verification",
+ "params": {
+  "path": "oracle/evidence/msl-machine/campaigns/erdos1084-harborth-2026-09-02/upper/O02a_PolarCoordinates.lean"
+ },
+ "improvesPublishedBound": false,
+ "trusted": false,
+ "result": {
+  "status": "UNVERIFIED",
+  "file": "oracle/evidence/msl-machine/campaigns/erdos1084-harborth-2026-09-02/upper/O02a_PolarCoordinates.lean",
+  "backend": "wsl",
+  "project": "/root/erdosfire-bench/proofs",
+  "needsMathlib": true,
+  "exitCode": 1,
+  "seconds": 133.3,
+  "declarations": [
+   {
+    "declaration": "o02a_polar_coordinates",
+    "clean": false,
+    "axioms": [
+     "propext",
+     "sorryAx",
+     "Classical.choice",
+     "Quot.sound"
+    ]
+   }
+  ],
+  "errors": [
+   "/tmp/oracle_lean_0VXGc58u.lean:34:9: error(lean.unknownIdentifier): Unknown identifier `le_or_lt`",
+   "/tmp/oracle_lean_0VXGc58u.lean:34:27: error: Tactic `rcases` failed: `x\u271d : ?m.224` is not an inductive datatype"
+  ]
+ }
+}

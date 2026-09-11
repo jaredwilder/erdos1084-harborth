@@ -1,0 +1,2 @@
+/tmp/axprobe/O06_ConvexPolygonAngleSum_SCAFFOLD.lean:37:8: warning: declaration uses `sorry`
+'o06_convex_polygon_angle_sum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

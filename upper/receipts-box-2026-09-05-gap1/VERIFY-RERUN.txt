@@ -1,0 +1,17 @@
+H3G_Frontier exit=0
+G2_GapCeiling exit=0
+H05G_Assembly exit=0
+H3G_FlatModel exit=0
+---
+03751bcf69bb9afa1c7875f8b846bfb6  /root/peer/msl-1084/gap1/G2_GapCeiling.lean
+f8226e10b1c14697bf5f7589cda3c25e  /root/peer/msl-1084/gap1/H05G_Assembly.lean
+c2201d1d80f46af31f3fe985c5425761  /root/peer/msl-1084/gap1/H3G_FlatModel.lean
+c5a58b53bb306606584ae976c6e3382f  /root/peer/msl-1084/gap1/H3G_Frontier.lean
+f69919ef01e624189e5f5bfa2803b62e  /root/peer/msl-1084/gap1/probeA.lean
+ 17:59:46 up  4:47,  8 users,  load average: 33.06, 31.14, 31.65
+
+--- banked copies (upper/*.lean) md5, checked against the box bytes above: IDENTICAL
+c5a58b53bb306606584ae976c6e3382f  H3G_Frontier.lean
+03751bcf69bb9afa1c7875f8b846bfb6  G2_GapCeiling.lean
+f8226e10b1c14697bf5f7589cda3c25e  H05G_Assembly.lean
+c2201d1d80f46af31f3fe985c5425761  H3G_FlatModel.lean

@@ -1,0 +1,4 @@
+BOX root@51.158.234.15 | project /root/formalizer/proofs | Mathlib 919544d430 | toolchain leanprover/lean4:v4.31.0-rc1
+All three files: lake env lean, EXIT 0, zero errors, zero sorry.
+Run under nice -n 19 (box load ~38 on 32 cores, no job killed).
+Date 2026-09-05.

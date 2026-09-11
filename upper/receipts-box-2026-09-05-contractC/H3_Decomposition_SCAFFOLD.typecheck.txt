@@ -1,0 +1,12 @@
+/root/peer/msl-1084/h3skel.lean:65:8: warning: declaration uses `sorry`
+/root/peer/msl-1084/h3skel.lean:88:8: warning: declaration uses `sorry`
+/root/peer/msl-1084/h3skel.lean:98:23: warning: Variable name `S` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/root/peer/msl-1084/h3skel.lean:98:43: warning: Variable name `h` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

@@ -1,0 +1,3 @@
+'hcentral_of_polar_desc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'o06_angle_sum_of_polar_fan_desc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'o06_polar_fan_desc_model' depends on axioms: [propext, Classical.choice, Quot.sound]

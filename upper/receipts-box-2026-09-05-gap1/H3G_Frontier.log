@@ -1,0 +1,50 @@
+/root/peer/msl-1084/gap1/H3G_Frontier.lean:247:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/msl-1084/gap1/H3G_Frontier.lean:320:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/msl-1084/gap1/H3G_Frontier.lean:325:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/msl-1084/gap1/H3G_Frontier.lean:333:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/msl-1084/gap1/H3G_Frontier.lean:418:2: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/msl-1084/gap1/H3G_Frontier.lean:508:35: warning: Variable name `hh` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'extremePoints_not_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'extremePoint_mem_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'vertexPts_subset_hullPts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'convexHull_subset_hullPts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'s2_sides_to_polar_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'s1_frontier_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'h3_frontier_inside' depends on axioms: [propext, Classical.choice, Quot.sound]
+'e1084_frontier_angle_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'e1084_hullPts_angle_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'e1084_frontier_angle_sum_square' depends on axioms: [propext, Classical.choice, Quot.sound]

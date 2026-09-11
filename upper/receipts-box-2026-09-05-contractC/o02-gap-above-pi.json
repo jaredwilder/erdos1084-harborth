@@ -1,0 +1,7 @@
+{
+ "id": "o02-gap-above-pi-breaks-central-2026-09-05",
+ "imports": "Mathlib",
+ "hypotheses": [],
+ "conclusion": "Real.arccos (Real.cos (3 * Real.pi / 2)) ≠ 3 * Real.pi / 2",
+ "proof": "by\n  have hc : Real.cos (3 * Real.pi / 2) = 0 := by\n    rw [show (3 * Real.pi / 2) = Real.pi / 2 + Real.pi by ring, Real.cos_add_pi,\n        Real.cos_pi_div_two, neg_zero]\n  rw [hc, Real.arccos_zero]\n  have hp := Real.pi_pos\n  intro hEq\n  linarith"
+}

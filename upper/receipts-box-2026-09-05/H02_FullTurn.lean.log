@@ -1,0 +1,44 @@
+/root/peer/sub-h2/H02_FullTurn.lean:230:10: warning: This simp argument is unused:
+  Pi.add_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [PiLp.add_apply, PiLp.smul_apply, smul_eq_mul,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵P̵i̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/sub-h2/H02_FullTurn.lean:233:10: warning: This simp argument is unused:
+  Pi.add_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [PiLp.add_apply, PiLp.smul_apply, smul_eq_mul,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵ ̵P̵i̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/sub-h2/H02_FullTurn.lean:385:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/sub-h2/H02_FullTurn.lean:405:6: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/sub-h2/H02_FullTurn.lean:416:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+'Erdos1084Upper.coord_ext' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.cvec_polar0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.cvec_polar1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.no_open_halfplane' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.theta_inj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.h2_full_turn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.h2_feeds_contract_c' depends on axioms: [propext, Classical.choice, Quot.sound]

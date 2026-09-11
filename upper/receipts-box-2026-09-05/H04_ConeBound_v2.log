@@ -1,0 +1,120 @@
+/root/peer/sub-h4/H04_ConeBound.lean:64:2: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/sub-h4/H04_ConeBound.lean:80:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/sub-h4/H04_ConeBound.lean:190:12: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:218:10: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:222:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:190:12: warning: '(field_simp; ring)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:218:10: warning: '(field_simp; ring)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:222:8: warning: 'rw [div_lt_one₀ hd] at habs' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:281:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/sub-h4/H04_ConeBound.lean:316:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:316:8: warning: 'exact le_of_eq (abs_sub_comm _ _)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:344:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:344:8: warning: 'simp [udeg, nbrs]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:434:8: warning: declaration uses `sorry`
+/root/peer/sub-h4/H04_ConeBound.lean:478:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:478:8: warning: 'norm_num [pt2, Fin.sum_univ_two, Real.dist_eq, sq_abs]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:486:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:486:6: warning: 'exact Finset.card_insert_of_not_mem h' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:599:47: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:599:67: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:600:47: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:600:67: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:601:47: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:601:67: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:602:47: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:602:67: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:599:47: warning: 'norm_num [wp, Wq]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:599:67: warning: 'simp [wp, Wq]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:600:47: warning: 'norm_num [wp, Wq]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:600:67: warning: 'simp [wp, Wq]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:601:47: warning: 'norm_num [wp, Wq]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:601:67: warning: 'simp [wp, Wq]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:602:47: warning: 'norm_num [wp, Wq]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h4/H04_ConeBound.lean:602:67: warning: 'simp [wp, Wq]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'Erdos1084Upper.h4_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.h4_halfplane_theta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.h4_cone_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.h4_hull_udeg_le_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.h4_hull_udeg_le_four'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.h4_hull_degree_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084Upper.h4_cone_bound' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Erdos1084Upper.h4_cone_bound_false' depends on axioms: [propext, Classical.choice, Quot.sound]

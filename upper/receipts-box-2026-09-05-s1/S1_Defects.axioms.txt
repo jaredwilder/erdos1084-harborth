@@ -1,0 +1,2 @@
+'ascending_defeats_hor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'collinear_kills_all_clauses' depends on axioms: [propext, Classical.choice, Quot.sound]

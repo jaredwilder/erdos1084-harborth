@@ -1,0 +1,36 @@
+{
+  "status": "CLOSED",
+  "campaign": "erdos1084-harborth-2026-09-02 / upper ladder / lower-half Finset counts",
+  "date": "2026-09-05",
+  "kernel_iterations_used": 2,
+  "kernel_iterations_budget": 6,
+  "sealed": [
+    {
+      "file": "L01_IdxCard.lean",
+      "theorem": "l01_idx_card",
+      "statement": "(k : Nat) : (idx k).card = 3 * k ^ 2 + 3 * k + 1",
+      "exit": 0,
+      "axioms": "[propext, Classical.choice, Quot.sound]",
+      "proof_source": "source-included from L03_IdxCard.lean (Erdos1084L03.idx_card)",
+      "statement_delta_vs_scaffold": "NONE (byte-identical frozen statement)"
+    },
+    {
+      "file": "L02_IdxUnitNum.lean",
+      "theorem": "l02_idx_unitnum",
+      "statement": "(k : Nat) : #{q in (idx k).sym2 | qfS q = 1} = 9 * k ^ 2 + 3 * k",
+      "exit": 0,
+      "axioms": "[propext, Classical.choice, Quot.sound]",
+      "proof_source": "source-included from L04_IdxUnitPairs.lean (Erdos1084L04.idx_unit_pairs)",
+      "statement_delta_vs_scaffold": "NONE (byte-identical frozen statement)"
+    }
+  ],
+  "open": [],
+  "notes": [
+    "Both scaffolds sorries are discharged. No statement was weakened, generalized or reshaped.",
+    "Only set_option deltas: L01 maxHeartbeats 400000 -> 800000; L02 maxHeartbeats 400000 -> 1600000 and maxRecDepth 4000 -> 8000. Termination budget only, never soundness.",
+    "L01 route == the route the scaffold predicted (fiberwise count, fibre size 2k+1-|a|).",
+    "L02 route != the route the scaffold predicted: the scaffold projected induction on k via a hexagonal ring decomposition adding 18k+12 pairs per step; L04/L02 close it with ONE fiberwise count in direction (1,0) (3k^2+k) transported by the 60-degree lattice rotation rho(a,b)=(-b,a+b) plus one translation, then a disjoint union of three Sym2 direction images. idx_unitnum_step is kept verbatim and still PROVED, but is now an unused preamble fact rather than a live step.",
+    "L02 carries 7 cosmetic linter warnings (6x unused simp arg Sym2.eq_iff, 1x push_cast does nothing) - identical to the sealed L04 logs. Zero errors, zero sorry, zero declaration-uses-sorry."
+  ],
+  "next_command": "ssh root@51.158.234.15 \"cd /root/formalizer/proofs \&\& export PATH=/root/.elan/bin:\$PATH \&\& nice -n 10 lake env lean /root/peer/e1084-upper/L05_LowerAllK.lean\"  # both hex_lower hypotheses are now symbolic for ALL k: re-assemble the lower half and retire the k=0..6 concrete seals"
+}

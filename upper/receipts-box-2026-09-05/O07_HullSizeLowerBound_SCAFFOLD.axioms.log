@@ -1,0 +1,2 @@
+/tmp/axprobe/O07_HullSizeLowerBound_SCAFFOLD.lean:86:8: warning: declaration uses `sorry`
+'o07_hull_size_lower_bound' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

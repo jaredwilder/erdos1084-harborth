@@ -1,0 +1,2 @@
+configs satisfying the REPAIRED strict same-side hypotheses: 123045
+of those, InsideAngleAt FAILURES: 0

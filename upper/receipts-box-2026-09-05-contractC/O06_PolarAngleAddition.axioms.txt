@@ -1,0 +1,2 @@
+'polar_angle_eq_arccos_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'polar_angle_add' depends on axioms: [propext, Classical.choice, Quot.sound]

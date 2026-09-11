@@ -1,0 +1,11 @@
+/root/peer/e1084-upper/H05_Assembly.lean:132:5: warning: Variable name `hh` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/root/peer/e1084-upper/H05_Assembly.lean:132:33: warning: Variable name `h3` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'Erdos1084Upper.hull_angle_package_pre' depends on axioms: [propext, Classical.choice, Quot.sound]

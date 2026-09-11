@@ -1,0 +1,7 @@
+=== O01_SixtyDegreeGap start 06:05:02
+O01_SixtyDegreeGap VERIFIED exit 0 603 s clean: ['o01_sixty_degree_gap']
+=== O02a_PolarCoordinates start 06:15:31
+O02a_PolarCoordinates UNVERIFIED exit 1 133 s clean: []
+=== O02b_ArccosCosLeAbs start 06:18:17
+O02b_ArccosCosLeAbs UNVERIFIED exit 15 414 s clean: []
+=== O02c_AngleLeArgGap start 06:25:17

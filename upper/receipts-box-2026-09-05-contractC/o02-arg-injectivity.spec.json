@@ -1,0 +1,11 @@
+{
+ "id": "o02-arg-injectivity-2026-09-05",
+ "imports": "Mathlib",
+ "hypotheses": [
+  "(z w : ℂ)",
+  "(hn : ‖z‖ = ‖w‖)",
+  "(ha : z.arg = w.arg)"
+ ],
+ "conclusion": "z = w",
+ "proof": "by exact Complex.ext_norm_arg hn ha"
+}

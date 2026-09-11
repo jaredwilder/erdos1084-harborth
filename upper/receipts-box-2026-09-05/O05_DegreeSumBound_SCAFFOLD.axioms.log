@@ -1,0 +1,2 @@
+/tmp/axprobe/O05_DegreeSumBound_SCAFFOLD.lean:88:8: warning: declaration uses `sorry`
+'o05_degree_sum_bound' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

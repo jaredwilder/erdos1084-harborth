@@ -1,0 +1,1 @@
+'o10_assemble' depends on axioms: [propext, Quot.sound]

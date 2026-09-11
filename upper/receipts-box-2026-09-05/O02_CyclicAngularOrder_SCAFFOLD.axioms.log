@@ -1,0 +1,2 @@
+/tmp/axprobe/O02_CyclicAngularOrder_SCAFFOLD.lean:52:8: warning: declaration uses `sorry`
+'o02_cyclic_angular_order' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

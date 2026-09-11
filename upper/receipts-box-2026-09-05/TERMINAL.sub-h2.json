@@ -1,0 +1,66 @@
+{
+  "agent": "sub-h2",
+  "rung": "H2 (h2_full_turn) -- the summit's central construction",
+  "date": "2026-09-05",
+  "status": "SEALED",
+  "box": "root@51.158.234.15",
+  "mathlib": "919544d4",
+  "lean_exit": 0,
+  "kernel_iterations_used": 3,
+  "kernel_iteration_budget": 14,
+  "sorry_count_in_file": 0,
+  "artifact": "oracle/evidence/msl-machine/campaigns/erdos1084-harborth-2026-09-02/upper/H02_FullTurn.lean",
+  "statement_frozen": {
+    "source": "H00_HullAngle_SCAFFOLD.lean lines 101-113",
+    "md5_frozen": "e6b042885f8595b12094428b21ee433f",
+    "md5_written": "e6b042885f8595b12094428b21ee433f",
+    "verdict": "BYTE-IDENTICAL"
+  },
+  "defs_verbatim": {
+    "source": "H00_HullAngle_SCAFFOLD.lean lines 51-82 (unitDistNum, IsSeparated', notation, nbrs, udeg, hullPts, InsideAngleAt)",
+    "md5_frozen": "8039caff8ced0b4bd37321661d198a95",
+    "md5_written": "8039caff8ced0b4bd37321661d198a95",
+    "verdict": "BYTE-IDENTICAL"
+  },
+  "sealed": [
+    "Erdos1084Upper.coord_ext' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.cvec_polar0' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.cvec_polar1' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.no_open_halfplane' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.theta_inj' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.h2_full_turn' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Erdos1084Upper.h2_feeds_contract_c' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "open": [],
+  "rungs": {
+    "H2a": "SEALED -- cvec_ne_zero / cvec_norm_pos / hull_ne_center (frontier meets no interior point)",
+    "H2b": "SEALED -- theta_inj: THE load-bearing theta-injectivity, PROVED via Complex.arg_eq_arg_iff + Convex.combo_interior_closure_mem_interior",
+    "H2c": "SEALED -- polar equations from Complex.cos_arg / Complex.sin_arg (see DEVIATION below)",
+    "H2d": "SEALED -- Finset.orderEmbOfFin ascending enumeration, h-periodic extension a(qh+s)=e s+q*2pi",
+    "H2e": "SEALED -- gap <= pi, both the h-1 interior gaps and the WRAP gap, via no_open_halfplane",
+    "H2f": "SEALED -- telescope = 2pi via Finset.sum_range_sub"
+  },
+  "deviations_from_architecture": [
+    "H2c: Orientation.oangle / o02_argument_function REPLACED by Complex.arg. The oangle route needs Module.Oriented + Fact(finrank=2) instances AND an oangle-toReal <-> cos/sin bridge that has no name on this rev; Complex.cos_arg / Complex.sin_arg ARE that bridge and Complex.arg has the identical (-pi, pi] range. Kernel forced: probe found no oangle->cos/sin lemma.",
+    "H2e: the extremePoints-subset-hullPts + closure_convexHull_extremePoints route (map Risk-1) was NOT NEEDED and is not taken. no_open_halfplane is cheaper: Finset.exists_min_image gives a minimiser u of <n,.> over S; convexHull_min pushes the min over the whole hull so <n,u> <= <n,v0> = 0; u cannot be interior (a step of -eps*n/2 would beat the minimum), so u is in hullPts; but every hull point was assumed to have <n,.-v0> > 0. Contradiction. No extreme-point theory at all."
+  ],
+  "name_drift_found_this_session": [
+    "convex_halfspace_ge -- GONE (Unknown identifier). Half-space convexity proved inline from the Convex definition.",
+    "Complex.abs_mul_exp_arg_mul_I -- GONE. Complex.arg_eq_arg_iff survives and is stated in NORM form: x.arg = y.arg <-> (norm y)/(norm x) * x = y.",
+    "Complex.cos_arg : x != 0 -> cos x.arg = x.re / ||x||   (norm, not Complex.abs)",
+    "Complex.sin_arg : sin x.arg = x.im / ||x||   (UNCONDITIONAL)",
+    "Finset.exists_min_image resolves (root-namespace exists_min_image)",
+    "Real.cos_add_nat_mul_two_pi / Real.sin_add_nat_mul_two_pi both live",
+    "push_neg deprecated in favour of `push Not` (warning only, still works)"
+  ],
+  "join_check": {
+    "theorem": "Erdos1084Upper.h2_feeds_contract_c",
+    "what": "Contract C's o06_angle_sum_of_polar_fan (O06_PolarFan_Handoff.lean:217-228) transcribed verbatim as an explicit hypothesis; the kernel checks H2's output tuple feeds it with NOTHING left over but hinside (= rung H3, Contract C's own).",
+    "verdict": "PASSES -- clean axiom triple"
+  },
+  "receipts": [
+    "receipts-box-2026-09-05/H02_FullTurn.lean.log  (lean exit 0, the seven #print axioms lines)",
+    "receipts-box-2026-09-05/H02_nameprobe.box.log  (the name probe that found convex_halfspace_ge gone)"
+  ],
+  "next_command": "ssh root@51.158.234.15 'cd /root/formalizer/proofs && export PATH=/root/.elan/bin:$PATH && nice -n 10 lake env lean /root/peer/sub-h2/H02_FullTurn.lean' ; then H3 (h3_inside_all) is the remaining scaffold socket -- Contract C owns it, and h2_feeds_contract_c is the exact hole it must fill."
+}

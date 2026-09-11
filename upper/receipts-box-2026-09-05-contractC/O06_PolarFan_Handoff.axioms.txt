@@ -1,0 +1,3 @@
+'ne_of_pos_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'hcentral_of_polar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'o06_angle_sum_of_polar_fan' depends on axioms: [propext, Classical.choice, Quot.sound]

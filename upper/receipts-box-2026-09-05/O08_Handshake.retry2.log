@@ -1,0 +1,7 @@
+/root/peer/e1084-upper/O08_Handshake.lean:68:4: error: `simp` made no progress
+/root/peer/e1084-upper/O08_Handshake.lean:67:14: error: Type mismatch
+  fun u h => ?m.25
+has type
+  (u : ?m.22) → (h : ?m.26 u) → ?m.27 u h
+but is expected to have type
+  Std.Irrefl fun u w => dist ↑u ↑w = 1

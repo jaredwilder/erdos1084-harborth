@@ -1,0 +1,6 @@
+'e1084_hullPts_angle_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'fanInterface_of_polarFan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'gap_lt_pi_hullPts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'gap_sum_of_period' depends on axioms: [propext, Classical.choice, Quot.sound]
+'hull_angle_package_of_polar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'hull_angle_package_pre' depends on axioms: [propext, Classical.choice, Quot.sound]

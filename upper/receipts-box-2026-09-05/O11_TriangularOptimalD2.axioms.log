@@ -1,0 +1,1 @@
+'o11_triangular_optimal_d2' depends on axioms: [propext, Classical.choice, Quot.sound]

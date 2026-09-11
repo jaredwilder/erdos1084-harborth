@@ -1,0 +1,1 @@
+'s1_consecutive_signs' depends on axioms: [propext, Classical.choice, Quot.sound]

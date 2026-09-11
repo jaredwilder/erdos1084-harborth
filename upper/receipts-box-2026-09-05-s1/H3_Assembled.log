@@ -1,0 +1,66 @@
+/root/peer/msl-1084/s1/H3_Assembled.lean:138:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/msl-1084/s1/H3_Assembled.lean:224:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/msl-1084/s1/H3_Assembled.lean:229:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/msl-1084/s1/H3_Assembled.lean:234:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/msl-1084/s1/H3_Assembled.lean:339:6: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/msl-1084/s1/H3_Assembled.lean:341:6: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/root/peer/msl-1084/s1/H3_Assembled.lean:465:35: warning: Variable name `hh` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/root/peer/msl-1084/s1/H3_Assembled.lean:702:41: warning: This simp argument is unused:
+  zero0
+
+Hint: Omit it from the simp argument list.
+  simp [pt2, zero0̵,̵ ̵z̵e̵r̵o̵1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/s1/H3_Assembled.lean:702:48: warning: This simp argument is unused:
+  zero1
+
+Hint: Omit it from the simp argument list.
+  simp [pt2, zero0,̵ ̵z̵e̵r̵o̵1̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'s1_consecutive_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'h3_hull_inside' depends on axioms: [propext, Classical.choice, Quot.sound]
+'e1084_hull_angle_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'e1084_hull_angle_sum_finset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'e1084_hull_angle_sum_square' depends on axioms: [propext, Classical.choice, Quot.sound]

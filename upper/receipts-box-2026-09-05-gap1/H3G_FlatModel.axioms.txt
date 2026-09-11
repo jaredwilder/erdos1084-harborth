@@ -1,0 +1,4 @@
+'e1084_flat_model' depends on axioms: [propext, Classical.choice, Quot.sound]
+'e1084_frontier_angle_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'flat_angle_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'flat_cross_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

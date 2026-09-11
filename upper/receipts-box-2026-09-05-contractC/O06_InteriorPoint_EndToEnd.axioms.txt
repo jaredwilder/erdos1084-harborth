@@ -1,0 +1,181 @@
+/root/peer/msl-1084/o06model2.lean:81:35: warning: Variable name `hh` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/root/peer/msl-1084/o06model2.lean:212:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, Real.cos_pi_div_four]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:213:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, Real.sin_pi_div_four]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:214:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, Real.cos_pi_div_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:215:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, Real.sin_pi_div_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:221:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, cm14]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:221:38: warning: This simp argument is unused:
+  cm14
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h2, W4, pt2,̵ ̵c̵m̵1̵4̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:222:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, sm14]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:222:38: warning: This simp argument is unused:
+  sm14
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h2, W4, pt2,̵ ̵s̵m̵1̵4̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:223:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:224:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:230:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, cm34, c34]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:230:38: warning: This simp argument is unused:
+  cm34
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h2, W4, pt2, cm̵34,̵ ̵c̵3̵4̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:231:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, sm34, s34]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:231:38: warning: This simp argument is unused:
+  sm34
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h2, W4, pt2, sm̵34,̵ ̵s̵3̵4̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:232:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, cm12]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:232:38: warning: This simp argument is unused:
+  cm12
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h2, W4, pt2,̵ ̵c̵m̵1̵2̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:233:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, sm12]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:233:38: warning: This simp argument is unused:
+  sm12
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h2, W4, pt2,̵ ̵s̵m̵1̵2̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:234:38: warning: This simp argument is unused:
+  cm14
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h2, W4, pt2,̵ ̵c̵m̵1̵4̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:235:38: warning: This simp argument is unused:
+  sm14
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h2, W4, pt2,̵ ̵s̵m̵1̵4̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:239:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, c34]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:240:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2, s34]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:241:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:242:25: warning: This simp argument is unused:
+  h2
+
+Hint: Omit it from the simp argument list.
+  simp [ww, h, h1, h̵2̵,̵ ̵W4, pt2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/root/peer/msl-1084/o06model2.lean:277:28: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+/root/peer/msl-1084/o06model2.lean:277:41: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'ww_inside' depends on axioms: [propext, Classical.choice, Quot.sound]
+'o06_square_end_to_end' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,90 @@
+Complex.arg : ℂ → ℝ
+Complex.arg_le_pi : ∀ (x : ℂ), x.arg ≤ π
+Complex.neg_pi_lt_arg : ∀ (x : ℂ), -π < x.arg
+Complex.arg_mem_Ioc : ∀ (z : ℂ), z.arg ∈ Set.Ioc (-π) π
+@Complex.cos_arg : ∀ {x : ℂ}, x ≠ 0 → cos x.arg = x.re / ‖x‖
+Complex.sin_arg : ∀ (x : ℂ), sin x.arg = x.im / ‖x‖
+/root/peer/sub-h2/P1_Probe.lean:20:8: error(lean.unknownIdentifier): Unknown constant `Complex.abs_mul_exp_arg_mul_I`
+@Complex.arg_eq_arg_iff : ∀ {x y : ℂ}, x ≠ 0 → y ≠ 0 → (x.arg = y.arg ↔ ↑‖y‖ / ↑‖x‖ * x = y)
+/root/peer/sub-h2/P1_Probe.lean:53:6: error: No goals to be solved
+/root/peer/sub-h2/P1_Probe.lean:57:88: error: unsolved goals
+u w : ℝ^2
+⊢ w.ofLp 0 * u.ofLp 0 + w.ofLp 1 * u.ofLp 1 = u.ofLp 0 * w.ofLp 0 + u.ofLp 1 * w.ofLp 1
+@convexHull_min : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Semiring 𝕜] [inst_1 : PartialOrder 𝕜]
+  [inst_2 : AddCommMonoid E] [inst_3 : Module 𝕜 E] {s t : Set E}, s ⊆ t → Convex 𝕜 t → (convexHull 𝕜) s ⊆ t
+/root/peer/sub-h2/P1_Probe.lean:63:8: error(lean.unknownIdentifier): Unknown identifier `convex_halfspace_ge`
+@LinearMap.isLinear : ∀ {R : Type u_1} {M : Type u_2} {M₂ : Type u_3} [inst : Semiring R] [inst_1 : AddCommMonoid M]
+  [inst_2 : AddCommMonoid M₂] [inst_3 : Module R M] [inst_4 : Module R M₂] (fₗ : M →ₗ[R] M₂), IsLinearMap R ⇑fₗ
+@Convex.combo_interior_closure_mem_interior : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Field 𝕜] [inst_1 : PartialOrder 𝕜]
+  [inst_2 : AddCommGroup E] [inst_3 : Module 𝕜 E] [inst_4 : TopologicalSpace E] [IsTopologicalAddGroup E]
+  [ContinuousConstSMul 𝕜 E] {s : Set E},
+  Convex 𝕜 s →
+    ∀ {x y : E}, x ∈ interior s → y ∈ closure s → ∀ {a b : 𝕜}, 0 < a → 0 ≤ b → a + b = 1 → a • x + b • y ∈ interior s
+@Convex.openSegment_interior_closure_subset_interior : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Field 𝕜]
+  [inst_1 : PartialOrder 𝕜] [inst_2 : AddCommGroup E] [inst_3 : Module 𝕜 E] [inst_4 : TopologicalSpace E]
+  [IsTopologicalAddGroup E] [ContinuousConstSMul 𝕜 E] {s : Set E},
+  Convex 𝕜 s → ∀ {x y : E}, x ∈ interior s → y ∈ closure s → openSegment 𝕜 x y ⊆ interior s
+@interior_subset : ∀ {X : Type u_1} [inst : TopologicalSpace X] {s : Set X}, interior s ⊆ s
+subset_convexHull : ∀ (𝕜 : Type u_1) {E : Type u_2} [inst : Semiring 𝕜] [inst_1 : PartialOrder 𝕜]
+  [inst_2 : AddCommMonoid E] [inst_3 : Module 𝕜 E] (s : Set E), s ⊆ (convexHull 𝕜) s
+@exists_min_image : ∀ {α : Type u_1} {β : Type u_2} [inst : LinearOrder α] (s : Finset β) (f : β → α),
+  s.Nonempty → ∃ x ∈ s, ∀ x' ∈ s, f x ≤ f x'
+@Metric.isOpen_iff : ∀ {α : Type u_1} [inst : PseudoMetricSpace α] {s : Set α},
+  IsOpen s ↔ ∀ x ∈ s, ∃ ε > 0, Metric.ball x ε ⊆ s
+@isOpen_interior : ∀ {X : Type u_1} [inst : TopologicalSpace X] {s : Set X}, IsOpen (interior s)
+@real_inner_self_eq_norm_sq : ∀ {F : Type u_1} [inst : SeminormedAddCommGroup F] [inst_1 : InnerProductSpace ℝ F]
+  (x : F), inner ℝ x x = ‖x‖ ^ 2
+@real_inner_smul_right : ∀ {F : Type u_1} [inst : SeminormedAddCommGroup F] [inst_1 : InnerProductSpace ℝ F] (x y : F)
+  (r : ℝ), inner ℝ x (r • y) = r * inner ℝ x y
+@inner_sub_right : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : RCLike 𝕜] [inst_1 : SeminormedAddCommGroup E]
+  [inst_2 : InnerProductSpace 𝕜 E] (x y z : E), inner 𝕜 x (y - z) = inner 𝕜 x y - inner 𝕜 x z
+@orderEmbOfFin : {α : Type u_1} → [inst : LinearOrder α] → (s : Finset α) → {k : ℕ} → #s = k → Fin k ↪o α
+@orderEmbOfFin_mem : ∀ {α : Type u_1} [inst : LinearOrder α] (s : Finset α) {k : ℕ} (h : #s = k) (i : Fin k),
+  (s.orderEmbOfFin h) i ∈ s
+@range_orderEmbOfFin : ∀ {α : Type u_1} [inst : LinearOrder α] (s : Finset α) {k : ℕ} (h : #s = k),
+  Set.range ⇑(s.orderEmbOfFin h) = ↑s
+@card_image_of_injOn : ∀ {α : Type u_1} {β : Type u_2} {s : Finset α} {f : α → β} [inst : DecidableEq β],
+  Set.InjOn f ↑s → #(image f s) = #s
+@OrderEmbedding.strictMono : ∀ {α : Type u_1} {β : Type u_2} [inst : Preorder α] [inst_1 : Preorder β] (f : α ↪o β),
+  StrictMono ⇑f
+@cos_pos_of_mem_Ioo : ∀ {x : ℝ}, x ∈ Set.Ioo (-(π / 2)) (π / 2) → 0 < cos x
+cos_add_two_pi : ∀ (x : ℝ), cos (x + 2 * π) = cos x
+cos_sub : ∀ (x y : ℝ), cos (x - y) = cos x * cos y + sin x * sin y
+sin_sq_add_cos_sq : ∀ (x : ℝ), sin x ^ 2 + cos x ^ 2 = 1
+/root/peer/sub-h2/P1_Probe.lean:96:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h2/P1_Probe.lean:97:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h2/P1_Probe.lean:96:6: warning: 'exact Real.cos_add_int_mul_two_pi x n' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h2/P1_Probe.lean:97:6: warning: 'simp [Real.cos_add_nat_mul_two_pi]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h2/P1_Probe.lean:101:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h2/P1_Probe.lean:102:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-h2/P1_Probe.lean:101:6: warning: 'exact Real.sin_add_int_mul_two_pi x n' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/root/peer/sub-h2/P1_Probe.lean:102:6: warning: 'simp [Real.sin_add_nat_mul_two_pi]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Complex.arg_real_mul : ∀ (x : ℂ) {r : ℝ}, 0 < r → (↑r * x).arg = x.arg
+/root/peer/sub-h2/P1_Probe.lean:114:37: error: unsolved goals
+z w : ℂ
+hz : z ≠ 0
+hw : w ≠ 0
+h : z.arg = w.arg
+e1 : ↑‖z‖ * Complex.exp (↑z.arg * Complex.I) = z
+e2 : ↑‖w‖ * Complex.exp (↑w.arg * Complex.I) = w
+hz' : ↑‖z‖ ≠ 0
+⊢ ↑‖z‖ * Complex.exp (↑z.arg * Complex.I) *
+        ↑‖↑‖w‖ * Complex.exp (Complex.I * ↑(↑‖z‖ * Complex.exp (↑z.arg * Complex.I)).arg)‖ /
+      ↑‖↑‖z‖ * Complex.exp (↑z.arg * Complex.I)‖ =
+    ↑‖w‖ * Complex.exp (Complex.I * ↑(↑‖z‖ * Complex.exp (↑z.arg * Complex.I)).arg)

@@ -1,0 +1,57 @@
+{
+ "schema": "oracle.msl.cable.v1",
+ "id": "o02-gap-above-pi-breaks-central-2026-09-05",
+ "spec": {
+  "id": "o02-gap-above-pi-breaks-central-2026-09-05",
+  "imports": "Mathlib",
+  "hypotheses": [],
+  "conclusion": "Real.arccos (Real.cos (3 * Real.pi / 2)) \u2260 3 * Real.pi / 2",
+  "proof": "by\n  have hc : Real.cos (3 * Real.pi / 2) = 0 := by\n    rw [show (3 * Real.pi / 2) = Real.pi / 2 + Real.pi by ring, Real.cos_add_pi,\n        Real.cos_pi_div_two, neg_zero]\n  rw [hc, Real.arccos_zero]\n  have hp := Real.pi_pos\n  intro hEq\n  linarith"
+ },
+ "formal_status": "KERNEL_CHECKED",
+ "events": [],
+ "axioms": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "attempts": [
+  {
+   "tactic": "(supplied proof)",
+   "status": "VERIFIED",
+   "seconds": 6.0,
+   "errors": [],
+   "exitCode": 0,
+   "resource_limit": null
+  }
+ ],
+ "budget_history": [
+  {
+   "tier_seconds": 120.0,
+   "outcome": "KERNEL_CHECKED"
+  }
+ ],
+ "kernel_result": {
+  "status": "VERIFIED",
+  "file": "oracle/frontier_formalizer/cable/theorems/msl_o02-gap-above-pi-breaks-central-2026-09-05.lean",
+  "backend": "ssh:root@51.158.234.15",
+  "project": "/root/formalizer/proofs",
+  "needsMathlib": true,
+  "exitCode": 0,
+  "seconds": 4.3,
+  "declarations": [
+   {
+    "declaration": "msl_o02_gap_above_pi_breaks_central_2026_09_05",
+    "clean": true,
+    "axioms": [
+     "propext",
+     "Classical.choice",
+     "Quot.sound"
+    ]
+   }
+  ],
+  "errors": []
+ },
+ "lean_result_block": "LEAN_RESULT o02-gap-above-pi-breaks-central-2026-09-05\n  FORMAL_STATUS KERNEL_CHECKED\n  FILE oracle/frontier_formalizer/cable/theorems/msl_o02-gap-above-pi-breaks-central-2026-09-05.lean\n  THEOREMS msl_o02_gap_above_pi_breaks_central_2026_09_05\n  BACKEND ssh:root@51.158.234.15\n  AXIOMS Classical.choice, Quot.sound, propext\n  TACTIC (supplied proof)\n  BUDGET 120s:KERNEL_CHECKED\n  FAILURE NONE",
+ "timestamp": "2026-09-05T14:42:23Z"
+}

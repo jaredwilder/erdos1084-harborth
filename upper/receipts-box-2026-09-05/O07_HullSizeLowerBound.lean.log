@@ -1,0 +1,10 @@
+/root/peer/sub-o07/O07_HullSizeLowerBound.lean:159:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/root/peer/sub-o07/O07_HullSizeLowerBound.lean:159:6: warning: 'rw [Finset.card_insert_of_not_mem h1, Finset.card_insert_of_not_mem h2, Finset.card_insert_of_not_mem h3,
+  row_card]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'o07_fails_for_every_k' depends on axioms: [propext, Classical.choice, Quot.sound]
+'o07_statement_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'hull_count_has_no_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,38 @@
+@extremePoints_subset : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Semiring 𝕜] [inst_1 : PartialOrder 𝕜]
+  [inst_2 : AddCommMonoid E] [inst_3 : SMul 𝕜 E] {A : Set E}, Set.extremePoints 𝕜 A ⊆ A
+@intrinsicFrontier_subset_frontier : ∀ {𝕜 : Type u_1} {V : Type u_2} {P : Type u_3} [inst : Ring 𝕜]
+  [inst_1 : AddCommGroup V] [inst_2 : Module 𝕜 V] [inst_3 : TopologicalSpace P] [inst_4 : AffineSpace V P] {s : Set P},
+  intrinsicFrontier 𝕜 s ⊆ frontier s
+intrinsicClosure_eq_closure : ∀ (𝕜 : Type u_1) {V : Type u_2} {P : Type u_3} [inst : NontriviallyNormedField 𝕜]
+  [CompleteSpace 𝕜] [inst_2 : NormedAddCommGroup V] [inst_3 : NormedSpace 𝕜 V] [FiniteDimensional 𝕜 V]
+  [inst_5 : MetricSpace P] [inst_6 : NormedAddTorsor V P] (s : Set P), intrinsicClosure 𝕜 s = closure s
+@Sbtw.angle_eq_right : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] {p₂ p₃ p : P} (p₁ : P),
+  Sbtw ℝ p₂ p₃ p → ∠ p₁ p₂ p₃ = ∠ p₁ p₂ p
+@Wbtw.angle_eq_left : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] {p₁ p p₂ : P} (p₃ : P),
+  Wbtw ℝ p₂ p₁ p → p₁ ≠ p₂ → ∠ p₁ p₂ p₃ = ∠ p p₂ p₃
+@angle_self_of_ne : ∀ {V : Type u_1} {P : Type u_2} [inst : NormedAddCommGroup V] [inst_1 : InnerProductSpace ℝ V]
+  [inst_2 : MetricSpace P] [inst_3 : NormedAddTorsor V P] {p p₀ : P}, p ≠ p₀ → ∠ p p₀ p = 0
+hullprobe3.lean:22:8: error(lean.unknownIdentifier): Unknown identifier `EuclideanGeometry.angle_self`
+@geometric_hahn_banach_open_point : ∀ {E : Type u_1} [inst : TopologicalSpace E] [inst_1 : AddCommGroup E]
+  [inst_2 : Module ℝ E] {s : Set E} {x : E} [IsTopologicalAddGroup E] [ContinuousSMul ℝ E],
+  Convex ℝ s → IsOpen s → x ∉ s → ∃ f, ∀ a ∈ s, f a < f x
+@geometric_hahn_banach_point_closed : ∀ {E : Type u_1} [inst : TopologicalSpace E] [inst_1 : AddCommGroup E]
+  [inst_2 : Module ℝ E] {t : Set E} {x : E} [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] [LocallyConvexSpace ℝ E],
+  Convex ℝ t → IsClosed t → x ∉ t → ∃ f u, f x < u ∧ ∀ b ∈ t, u < f b
+@Convex.interior_nonempty_iff_affineSpan_eq_top : ∀ {V : Type u_1} [inst : NormedAddCommGroup V]
+  [inst_1 : NormedSpace ℝ V] [FiniteDimensional ℝ V] {s : Set V},
+  Convex ℝ s → ((interior s).Nonempty ↔ affineSpan ℝ s = ⊤)
+instNormedAddCommGroupAngle.toAddCommGroup
+@Angle.angle_eq_iff_two_pi_dvd_sub : ∀ {ψ θ : ℝ}, ↑θ = ↑ψ ↔ ∃ k, θ - ψ = 2 * π * ↑k
+Angle.coe_nsmul : ∀ (n : ℕ) (x : ℝ), ↑(n • x) = n • ↑x
+Angle.coe_zsmul : ∀ (z : ℤ) (x : ℝ), ↑(z • x) = z • ↑x
+hullprobe3.lean:73:8: error(lean.unknownIdentifier): Unknown identifier `EuclideanGeometry.angle_add_angle_eq_angle_of_sbtw`
+hullprobe3.lean:74:8: error(lean.unknownIdentifier): Unknown identifier `EuclideanGeometry.angle_add_angle_of_wSameSide`
+hullprobe3.lean:75:8: error(lean.unknownIdentifier): Unknown constant `Polygon.IsConvexPolygon`
+hullprobe3.lean:76:8: error(lean.unknownIdentifier): Unknown constant `Polygon.interiorAngle`
+hullprobe3.lean:77:8: error(lean.unknownIdentifier): Unknown identifier `convexHull_frontier`
+hullprobe3.lean:78:8: error(lean.unknownIdentifier): Unknown identifier `extremePoints_subset_frontier`
+hullprobe3.lean:79:8: error(lean.unknownIdentifier): Unknown constant `Set.extremePoints_convexHull_eq`
+hullprobe3.lean:80:8: error(lean.unknownIdentifier): Unknown identifier `EuclideanGeometry.oangle_sum_eq_two_pi`

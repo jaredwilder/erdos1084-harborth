@@ -1,0 +1,9 @@
+{
+ "problem": "1084",
+ "slug": "erdos1084",
+ "canonical_statement": "f 2 (3 * n ^ 2 + 3 * n + 1) = 9 * n ^ 2 + 3 * n",
+ "canonical_statement_source": "oracle/acquisition/formal-conjectures/FormalConjectures/ErdosProblems/1084.lean",
+ "canonical_statement_declaration": "erdos_1084.variants.triangular_optimal_d2",
+ "canonical_statement_binding": "VERBATIM (byte-checked against the upstream file)",
+ "provenance": "SHIM.  The campaign carries no frozen contract.json; this file was synthesised on 2026-09-02 by the upper-bound ladder pass solely so that DagBuilder's ContractSet can bind the root VERBATIM.  It is NOT an ingest contract and must not be treated as one."
+}

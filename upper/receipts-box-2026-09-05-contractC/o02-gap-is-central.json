@@ -1,0 +1,5 @@
+{"id": "o02-gap-equals-central-angle-2026-09-05",
+ "imports": "Mathlib",
+ "hypotheses": ["(t : \u211d)", "(h0 : 0 \u2264 t)", "(h1 : t \u2264 Real.pi)"],
+ "conclusion": "Real.arccos (Real.cos t) = t",
+ "proof": "by exact Real.arccos_cos h0 h1"}

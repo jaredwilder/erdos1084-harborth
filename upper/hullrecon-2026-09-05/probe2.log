@@ -1,0 +1,105 @@
+@Module.Basis.orientation : {R : Type u_1} →
+  [inst : CommRing R] →
+    [inst_1 : PartialOrder R] →
+      [inst_2 : IsStrictOrderedRing R] →
+        {M : Type u_2} →
+          [inst_3 : AddCommGroup M] →
+            [inst_4 : Module R M] →
+              {ι : Type u_3} → [Fintype ι] → [DecidableEq ι] → Module.Basis ι R M → Orientation R M ι
+monoEquivOfFin : (α : Type u_1) →
+  [inst : Fintype α] → [inst_1 : LinearOrder α] → {k : ℕ} → Fintype.card α = k → Fin k ≃o α
+@finRotate_apply : ∀ {n : ℕ} (i : Fin n), (finRotate n) i = i + 1
+@Convex.interior : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Field 𝕜] [inst_1 : PartialOrder 𝕜] [inst_2 : AddCommGroup E]
+  [inst_3 : Module 𝕜 E] [inst_4 : TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousConstSMul 𝕜 E]
+  [ZeroLEOneClass 𝕜] {s : Set E}, Convex 𝕜 s → Convex 𝕜 (interior s)
+@Convex.closure : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Field 𝕜] [inst_1 : PartialOrder 𝕜] [inst_2 : AddCommGroup E]
+  [inst_3 : Module 𝕜 E] [inst_4 : TopologicalSpace E] [IsTopologicalAddGroup E] [ContinuousConstSMul 𝕜 E] {s : Set E},
+  Convex 𝕜 s → Convex 𝕜 (closure s)
+@Convex.combo_interior_closure_mem_interior : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Field 𝕜] [inst_1 : PartialOrder 𝕜]
+  [inst_2 : AddCommGroup E] [inst_3 : Module 𝕜 E] [inst_4 : TopologicalSpace E] [IsTopologicalAddGroup E]
+  [ContinuousConstSMul 𝕜 E] {s : Set E},
+  Convex 𝕜 s →
+    ∀ {x y : E}, x ∈ interior s → y ∈ closure s → ∀ {a b : 𝕜}, 0 < a → 0 ≤ b → a + b = 1 → a • x + b • y ∈ interior s
+Angle.instCircularOrder : CircularOrder Angle
+hullprobe2.lean:40:2: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  DecidablePred fun v => v ∈ frontier ((convexHull ℝ) ↑S)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+hullprobe2.lean:43:2: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  DecidablePred fun v => v ∈ Set.extremePoints ℝ ((convexHull ℝ) ↑S)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+hullprobe2.lean:45:9: warning: Variable name `S` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+hullprobe2.lean:49:26: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat (Fin h) 1
+numerals are polymorphic in Lean, but the numeral `1` cannot be used in a context where the expected type is
+  Fin h
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+hullprobe2.lean:49:48: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat (Fin h) 1
+numerals are polymorphic in Lean, but the numeral `1` cannot be used in a context where the expected type is
+  Fin h
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+@sort : {α : Type u_1} →
+  Finset α →
+    (r : autoParam (α → α → Prop) sort._auto_1) →
+      [DecidableRel r] → [IsTrans α r] → [Std.Antisymm r] → [Std.Total r] → List α
+@orderIsoOfFin : {α : Type u_1} → [inst : LinearOrder α] → (s : Finset α) → {k : ℕ} → #s = k → Fin k ≃o ↥s
+hullprobe2.lean:69:8: error(lean.unknownIdentifier): Unknown constant `Finset.sortBy`
+hullprobe2.lean:70:8: error(lean.unknownIdentifier): Unknown constant `Finset.sortCircular`
+@List.mergeSort : {α : Type u_1} → List α → autoParam (α → α → Bool) List.mergeSort._auto_1 → List α
+@exists_ne_map_eq_of_card_lt_of_maps_to : ∀ {α : Type u_1} {β : Type u_2} {s : Finset α} {t : Finset β},
+  #t < #s → ∀ {f : α → β}, Set.MapsTo f ↑s ↑t → ∃ x ∈ s, ∃ y ∈ s, x ≠ y ∧ f x = f y
+@sum_sdiff : ∀ {ι : Type u_1} {M : Type u_2} {s₁ s₂ : Finset ι} [inst : AddCommMonoid M] {f : ι → M}
+  [inst_1 : DecidableEq ι], s₁ ⊆ s₂ → ∑ x ∈ s₂ \ s₁, f x + ∑ x ∈ s₁, f x = ∑ x ∈ s₂, f x
+@card_sdiff : ∀ {α : Type u_1} {s t : Finset α} [inst : DecidableEq α], #(t \ s) = #t - #(s ∩ t)
+@Set.Finite.isClosed_convexHull : ∀ {E : Type u_1} (𝕜 : Type u_2) [inst : Field 𝕜] [inst_1 : LinearOrder 𝕜]
+  [IsStrictOrderedRing 𝕜] [inst_3 : TopologicalSpace 𝕜] [OrderClosedTopology 𝕜] [CompactIccSpace 𝕜] [ContinuousAdd 𝕜]
+  [inst_7 : AddCommGroup E] [inst_8 : Module 𝕜 E] [inst_9 : TopologicalSpace E] [IsTopologicalAddGroup E]
+  [ContinuousSMul 𝕜 E] [T2Space E] {s : Set E}, s.Finite → IsClosed ((convexHull 𝕜) s)
+IsExtreme : (𝕜 : Type u_1) →
+  {E : Type u_2} → [Semiring 𝕜] → [PartialOrder 𝕜] → [AddCommMonoid E] → [SMul 𝕜 E] → Set E → Set E → Prop
+hullprobe2.lean:79:8: error(lean.unknownIdentifier): Unknown constant `Set.extremePoints_subset`
+@inter_extremePoints_subset_extremePoints_of_subset : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Semiring 𝕜]
+  [inst_1 : PartialOrder 𝕜] [inst_2 : AddCommMonoid E] [inst_3 : SMul 𝕜 E] {A B : Set E},
+  B ⊆ A → B ∩ Set.extremePoints 𝕜 A ⊆ Set.extremePoints 𝕜 B
+@Convex.convexIndependent_extremePoints : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Field 𝕜] [inst_1 : LinearOrder 𝕜]
+  [IsStrictOrderedRing 𝕜] [inst_3 : AddCommGroup E] [inst_4 : Module 𝕜 E] {s : Set E},
+  Convex 𝕜 s → ConvexIndependent 𝕜 Subtype.val
+Wbtw : (R : Type u_1) →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      [inst : Ring R] →
+        [PartialOrder R] → [inst_2 : AddCommGroup V] → [Module R V] → [AffineSpace V P] → P → P → P → Prop
+Sbtw : (R : Type u_1) →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      [inst : Ring R] →
+        [PartialOrder R] → [inst_2 : AddCommGroup V] → [Module R V] → [AffineSpace V P] → P → P → P → Prop
+affineSegment : (R : Type u_1) →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      [inst : Ring R] → [PartialOrder R] → [inst_2 : AddCommGroup V] → [Module R V] → [AffineSpace V P] → P → P → Set P
+Collinear : (k : Type u_1) →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      [inst : DivisionRing k] → [inst_1 : AddCommGroup V] → [Module k V] → [AffineSpace V P] → Set P → Prop
+@AffineSubspace.SSameSide : {R : Type u_1} →
+  {V : Type u_2} →
+    {P : Type u_3} →
+      [inst : CommRing R] →
+        [inst_1 : PartialOrder R] →
+          [IsStrictOrderedRing R] →
+            [inst_3 : AddCommGroup V] →
+              [inst_4 : Module R V] → [inst_5 : AffineSpace V P] → AffineSubspace R P → P → P → Prop
+@AffineSubspace.wSameSide_of_left_mem : ∀ {R : Type u_1} {V : Type u_2} {P : Type u_3} [inst : CommRing R]
+  [inst_1 : PartialOrder R] [inst_2 : IsStrictOrderedRing R] [inst_3 : AddCommGroup V] [inst_4 : Module R V]
+  [inst_5 : AffineSpace V P] {s : AffineSubspace R P} {x : P} (y : P), x ∈ s → s.WSameSide x y

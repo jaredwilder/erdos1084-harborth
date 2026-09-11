@@ -1,0 +1,33 @@
+{
+  "node": "O07",
+  "file": "oracle/evidence/msl-machine/campaigns/erdos1084-harborth-2026-09-02/upper/O07_HullSizeLowerBound.lean",
+  "status": "CLOSED",
+  "resolution": "STATEMENT_REFUTED",
+  "warning": "CLOSED means the RUNG IS SETTLED, not that O07 was proved. The frozen `sorry` in O07_HullSizeLowerBound_SCAFFOLD.lean is UNDISCHARGEABLE: the statement is false.",
+  "kernel": {
+    "box": "root@51.158.234.15",
+    "mathlib": "919544d4",
+    "toolchain": "v4.31.0-rc1",
+    "command": "lake env lean /root/peer/sub-o07/O07_HullSizeLowerBound.lean",
+    "exit": 0,
+    "sorry_count": 0,
+    "iterations_used": 4,
+    "iterations_budget": 12
+  },
+  "sealed": [
+    "o07_fails_for_every_k : (k : ℕ) → 1 ≤ k → ∃ S : Finset (ℝ^2), Metric.IsSeparated' 1 ↑S ∧ S.card = 3*k^2+3*k+1 ∧ (Erdos1084Upper.hullPts S).card ≤ 3  |  'o07_fails_for_every_k' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "o07_statement_false : ¬ O07Statement  |  'o07_statement_false' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "hull_count_has_no_lower_bound : (N : ℕ) → ∃ S : Finset (ℝ^2), Metric.IsSeparated' 1 ↑S ∧ N ≤ S.card ∧ (Erdos1084Upper.hullPts S).card ≤ 3  |  'hull_count_has_no_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "supporting_sealed": [
+    "O07Refute.cfg_card", "O07Refute.emb_inj", "O07Refute.emb_sep", "O07Refute.combo3",
+    "O07Refute.tri_mem", "O07Refute.int_mem", "O07Refute.SS_card", "O07Refute.SS_sep",
+    "O07Refute.row_interior", "O07Refute.hull_sub", "O07Refute.hullPts_card_le"
+  ],
+  "open": [],
+  "witness": "S = image of {(0,0), (m+2,0), (0,m+2)} ∪ {(1,1),(2,1),...,(m,1)} ⊂ ℤ² into ℝ², at m = 3k²+3k-2. Lattice points, so 1-separation is automatic. Every row point sits ≥ 1/2 from all three triangle edges, hence in the INTERIOR of the hull, hence off its frontier. Only the 3 corners survive in hullPts.",
+  "why_the_scaffold_route_could_not_work": "Grant the two missing Mathlib theories (planar Steiner formula, isoperimetric inequality for convex bodies) for free. The packing chain nπ/4 ≤ A + P/2 + π/4 with 4πA ≤ P² yields a LOWER bound on the perimeter P ≥ π(√n−1); the hull-point relation P ≥ h bounds h from ABOVE. They never compose into a lower bound on h. The inequality chain points the wrong way.",
+  "blocked_on_for_the_ladder": "Harborth's h is the outer-face vertex count b of the planar drawing of the unit-distance (penny) graph, not #(hullPts S). Always #(hullPts S) ≤ b. O05 (e ≤ 3n−h−3) stays SOUND under the hull reading because a smaller h only weakens it; O07 needs a LOWER bound and the hull reading provides none. Restating O07 (and O05, to keep O10 sharp) against b requires a planar-face API Mathlib does not have. Do NOT substitute the frontier of the union of radius-1/2 discs: 1-separation makes them interior-disjoint, so every point of S qualifies and the count collapses to n.",
+  "next_command": "python oracle/run.py explain \"erdos:1084\"  # then: re-architect O05/O07 against the outer-face count b; the hull-based O07 is dead, see O07_HullSizeLowerBound.lean and receipts-box-2026-09-05/O07_HullSizeLowerBound.lean.log",
+  "receipt": "oracle/evidence/msl-machine/campaigns/erdos1084-harborth-2026-09-02/upper/receipts-box-2026-09-05/O07_HullSizeLowerBound.lean.log"
+}

@@ -1,0 +1,30 @@
+{
+  "status": "PARTIAL",
+  "campaign": "erdos1084-harborth-2026-09-02",
+  "rung": "O05",
+  "target_statement": "o05_degree_sum_bound : (sum_{v in S} udeg S v) + 2*h + 6 <= 6*n",
+  "statement_frozen": true,
+  "statement_reworded": false,
+  "file": "/root/peer/sub-o05/O05_DegreeSumBound.lean",
+  "log": "/root/peer/sub-o05/O05.log",
+  "mathlib_rev": "919544d4",
+  "lean_exit_code": 0,
+  "kernel_iterations_used": 6,
+  "kernel_iterations_budget": 8,
+  "sorry_count": 1,
+  "sealed": [
+    "o01_sixty  --  [propext, Classical.choice, Quot.sound]  --  rung O01, law of cosines + antitone cos on [0,pi]",
+    "abs_toReal_coe_le  --  [propext, Classical.choice, Quot.sound]  --  reducing a real mod 2*pi never increases |.|",
+    "o02_argument_function  --  [propext, Classical.choice, Quot.sound]  --  rung O02 (O02a+O02c+O02d) DISCHARGED via Orientation.oangle",
+    "o03_interior_degree_le_six  --  [propext, Classical.choice, Quot.sound]  --  verbatim the sealed O03",
+    "o03_udeg_le_six  --  [propext, Classical.choice, Quot.sound]  --  udeg S v <= 6 with BOTH O03 binders discharged"
+  ],
+  "open": [
+    "o0406_hull_angle_package  --  THE ONLY sorry. Rungs O04 (supporting line => deg v <= 1 + 3*alpha_v/pi at a hull vertex) and O06 (sum_{hull} alpha_v = (h-2)*pi), delivered as ONE package because the per-vertex bound is only usable against the aggregate angle sum. No Mathlib substrate exists: convex-polygon interior angles at the vertices of frontier (convexHull R S) are not defined anywhere in Mathlib. This is a development, not a lemma.",
+    "o05_degree_sum_bound  --  [propext, sorryAx, Classical.choice, Quot.sound]  --  carries sorryAx for exactly one reason: o0406_hull_angle_package. The assembly itself (hull/interior split, N<->R cast discipline, arithmetic 6(n-h) + (h + 3(h-2)) = 6n - 2h - 6) is a real proof."
+  ],
+  "not_claimed_sealed": "o05_degree_sum_bound is NOT sealed. Its axiom line contains sorryAx.",
+  "stop_reason": "Honest stop at 6/8. The remaining gap is not a name-drift or tactic problem: it needs convex-polygon interior-angle theory that does not exist in Mathlib. Two more kernel iterations cannot close it.",
+  "next_command": "cd /root/formalizer/proofs && export PATH=/root/.elan/bin:$PATH && nice -n 10 lake env lean /root/peer/sub-o05/O05_DegreeSumBound.lean > /root/peer/sub-o05/O05.log 2>&1; echo exit $?; grep -n 'depends on axioms' /root/peer/sub-o05/O05.log",
+  "next_work": "Attack o0406_hull_angle_package as its own campaign rung. It needs, in order: (1) a definition of the interior angle of convexHull R S at a point of frontier (convexHull R S); (2) O04, the supporting-line cone bound deg v <= 1 + 3*alpha_v/pi, which is O03's pigeonhole with 2*pi replaced by alpha_v and one extra neighbour permitted on the cone boundary; (3) O06, the angle sum (h-2)*pi. Nothing downstream of it in O05 remains to be done."
+}

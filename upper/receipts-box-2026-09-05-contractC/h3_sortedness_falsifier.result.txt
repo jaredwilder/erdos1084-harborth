@@ -1,0 +1,7 @@
+h= 4 scrambled hits so far: 0
+h= 5 scrambled hits so far: 0
+h= 6 scrambled hits so far: 0
+h= 7 scrambled hits so far: 0
+h= 8 scrambled hits so far: 0
+---
+trials 3984 scrambled hits 0

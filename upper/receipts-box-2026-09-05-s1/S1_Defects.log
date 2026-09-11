@@ -1,0 +1,12 @@
+@convex_closedBall : ∀ {E : Type u_1} [inst : SeminormedAddCommGroup E] [inst_1 : NormedSpace ℝ E] (a : E) (r : ℝ),
+  Convex ℝ (Metric.closedBall a r)
+@norm_combo_lt_of_ne : ∀ {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : NormedSpace ℝ E] [StrictConvexSpace ℝ E]
+  {x y : E} {a b r : ℝ}, ‖x‖ ≤ r → ‖y‖ ≤ r → x ≠ y → 0 < a → 0 < b → a + b = 1 → ‖a • x + b • y‖ < r
+@Metric.closedBall : {α : Type u_1} → [PseudoMetricSpace α] → α → ℝ → Set α
+@EuclideanSpace.norm_eq : ∀ {𝕜 : Type u_1} [inst : RCLike 𝕜] {n : Type u_2} [inst_1 : Fintype n]
+  (x : EuclideanSpace 𝕜 n), ‖x‖ = √(∑ i, ‖x.ofLp i‖ ^ 2)
+@mem_extremePoints : ∀ {𝕜 : Type u_1} {E : Type u_2} [inst : Semiring 𝕜] [inst_1 : PartialOrder 𝕜]
+  [inst_2 : AddCommMonoid E] [inst_3 : SMul 𝕜 E] {A : Set E} {x : E},
+  x ∈ Set.extremePoints 𝕜 A ↔ x ∈ A ∧ ∀ x₁ ∈ A, ∀ x₂ ∈ A, x ∈ openSegment 𝕜 x₁ x₂ → x₁ = x ∧ x₂ = x
+'ascending_defeats_hor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'collinear_kills_all_clauses' depends on axioms: [propext, Classical.choice, Quot.sound]

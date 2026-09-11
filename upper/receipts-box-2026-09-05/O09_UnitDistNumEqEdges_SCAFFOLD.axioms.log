@@ -1,0 +1,2 @@
+/tmp/axprobe/O09_UnitDistNumEqEdges_SCAFFOLD.lean:84:8: warning: declaration uses `sorry`
+'o09_unitDistNum_eq_edges' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

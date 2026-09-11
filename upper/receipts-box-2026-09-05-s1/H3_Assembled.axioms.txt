@@ -1,0 +1,5 @@
+'s1_consecutive_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'h3_hull_inside' depends on axioms: [propext, Classical.choice, Quot.sound]
+'e1084_hull_angle_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'e1084_hull_angle_sum_finset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'e1084_hull_angle_sum_square' depends on axioms: [propext, Classical.choice, Quot.sound]

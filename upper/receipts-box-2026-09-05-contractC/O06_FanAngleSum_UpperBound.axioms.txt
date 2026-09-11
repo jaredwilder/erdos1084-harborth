@@ -1,0 +1,1 @@
+'o06_fan_angle_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]

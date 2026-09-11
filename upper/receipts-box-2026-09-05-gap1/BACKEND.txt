@@ -1,0 +1,18 @@
+BOX root@51.158.234.15 | project /root/formalizer/proofs | Mathlib 919544d430 | toolchain leanprover/lean4:v4.31.0-rc1
+Remote working dir /root/peer/msl-1084/gap1 | command: lake env lean <file>, under nice -n 19.
+Box load average ~31-33 on 32 cores throughout; no existing job was touched or killed.
+No local compile at any point.
+
+FOUR FILES, EACH RE-RUN FROM SCRATCH AFTER THE LAST EDIT (see VERIFY-RERUN.txt):
+
+  H3G_Frontier.lean    exit 0   gap 1a + gap 1b + the ball model      (10 declarations)
+  G2_GapCeiling.lean   exit 0   gap 2, the strict gap ceiling          (2 declarations)
+  H05G_Assembly.lean   exit 0   FanInterface produced from polar data  (6 declarations)
+  H3G_FlatModel.lean   exit 0   the DEGENERATE model (flat vertex)     (4 declarations)
+
+Zero `sorry`.  Every declaration printed by `#print axioms` carries exactly
+{propext, Classical.choice, Quot.sound}.  Axiom prints are in <file>.axioms.txt,
+full compiler logs (warnings only) in <file>.log, md5 of the exact compiled bytes
+in VERIFY-RERUN.txt.
+
+Date 2026-09-05 (evening session, following S1-REPORT-2026-09-05.md).

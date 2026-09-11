@@ -1,0 +1,2 @@
+'o02_statement_false_wrap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'o02_statement_false_sum' depends on axioms: [propext, Classical.choice, Quot.sound]

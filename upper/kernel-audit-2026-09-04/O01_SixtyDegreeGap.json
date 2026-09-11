@@ -1,0 +1,31 @@
+{
+ "routed": true,
+ "engine": "lean",
+ "shape": "lean-file-verification",
+ "params": {
+  "path": "oracle/evidence/msl-machine/campaigns/erdos1084-harborth-2026-09-02/upper/O01_SixtyDegreeGap.lean"
+ },
+ "improvesPublishedBound": false,
+ "trusted": true,
+ "result": {
+  "status": "VERIFIED",
+  "file": "oracle/evidence/msl-machine/campaigns/erdos1084-harborth-2026-09-02/upper/O01_SixtyDegreeGap.lean",
+  "backend": "wsl",
+  "project": "/root/erdosfire-bench/proofs",
+  "needsMathlib": true,
+  "exitCode": 0,
+  "seconds": 602.9,
+  "declarations": [
+   {
+    "declaration": "o01_sixty_degree_gap",
+    "clean": true,
+    "axioms": [
+     "propext",
+     "Classical.choice",
+     "Quot.sound"
+    ]
+   }
+  ],
+  "errors": []
+ }
+}

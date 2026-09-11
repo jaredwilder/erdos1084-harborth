@@ -1,0 +1,33 @@
+{
+  "claim": "The maximum number of unit distances among n pairwise 1-separated points in the plane (the maximum edge count of an n-vertex penny graph) equals floor(3n - sqrt(12n-3)), and at the centred hexagonal numbers n = 3k^2+3k+1 this evaluates exactly to 9k^2+3k, attained by the hexagonal patch of the triangular lattice.",
+  "domain": "discrete geometry / combinatorial geometry",
+  "facets": {
+    "entities": "finite point sets in the Euclidean plane with all pairwise distances at least 1 (penny graphs / minimum-distance graphs)",
+    "mechanism": "convex-hull boundary vertices have deficient unit-degree; the sqrt(12n-3) term is the isoperimetric penalty of the hull",
+    "method": "induction on the number of vertices removing a hull vertex of unit-degree at most 3; explicit hexagonal triangular-lattice patch for sharpness",
+    "outcome": "maximum number of unit-distance pairs e(n) = floor(3n - sqrt(12n-3)); exactly 9k^2+3k at n = 3k^2+3k+1"
+  },
+  "constraints": {
+    "search_queries": [
+      "Harborth penny graph maximum number of edges 1974",
+      "Harborth Loesung zu Problem 664A Elemente der Mathematik 29 1974",
+      "penny graph maximum edges floor(3n - sqrt(12n-3))",
+      "minimum distance graph plane maximum edges triangular lattice sharp",
+      "matchstick graph tight bound number of edges Lavollee Swanepoel",
+      "Erdos maximum unit distances among points with minimum distance one",
+      "unit distance graph 1-separated point set hexagonal lattice optimal"
+    ],
+    "patent_queries": []
+  },
+  "candidate_differentiators": [
+    "machine-checked formalization of the bound rather than a new bound"
+  ],
+  "alternative_facets": {
+    "mechanism": [
+      "Euler formula for the plane unit-distance graph plus 2e >= 3(f-1)+h"
+    ]
+  },
+  "min_corpus": 20,
+  "novelty_mode": "DISCOVERY_CLAIM",
+  "novelty_target": "paper"
+}

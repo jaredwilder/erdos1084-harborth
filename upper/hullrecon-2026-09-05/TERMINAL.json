@@ -1,0 +1,36 @@
+{
+  "status": "CLOSED",
+  "task": "HULL INTERIOR-ANGLE THEORY -- Mathlib API reconnaissance",
+  "mathlib_rev": "919544d4309104b3f19724b0e6e48c701d27948f",
+  "toolchain": "leanprover/lean4:v4.31.0-rc1",
+  "mathlib_path": "/root/formalizer/proofs/.lake/packages/mathlib",
+  "sealed": [
+    "api map delivered",
+    "3 probe compiles used of ~10 budget",
+    "supporting-line route for (c) PROVED to compile in 4 lines from geometric_hahn_banach_open_point",
+    "affine oangle (mp) PROVED usable on EuclideanSpace R (Fin 2) once both instances supplied by hand",
+    "triangle angle sum degeneracy PROVED: only hypothesis is p2 != p1; p3 may equal p1 or p2; collinear OK",
+    "Mathlib.Geometry.Polygon.Basic FOUND in this rev (new, 2026, A. M. Berns) -- structure only, no angles, no convexity",
+    "NO unoriented angle additivity in Mathlib -- the oriented route is forced"
+  ],
+  "probe_logs": [
+    "/root/peer/sub-hullrecon/probe1.log",
+    "/root/peer/sub-hullrecon/probe2.log",
+    "/root/peer/sub-hullrecon/probe3.log"
+  ],
+  "probe_sources": [
+    "/root/formalizer/proofs/hullprobe1.lean",
+    "/root/formalizer/proofs/hullprobe2.lean",
+    "/root/formalizer/proofs/hullprobe3.lean"
+  ],
+  "sibling_intel_read": [
+    "/root/peer/sub-o05/O05_DegreeSumBound.lean",
+    "/root/peer/e1084-upper/O02a_PolarCoordinates.lean",
+    "/root/peer/e1084-upper/O02c_AngleLeArgGap.lean",
+    "/root/peer/e1084-upper/O02e_CyclicGapSum.lean",
+    "/root/peer/e1084-upper/O06_ConvexPolygonAngleSum_SCAFFOLD.lean"
+  ],
+  "risks_count": 5,
+  "wrote_outside_scratch": false,
+  "git_commands_run": 0
+}

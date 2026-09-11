@@ -1,0 +1,63 @@
+{
+  "status": "VERIFIED",
+  "file": "oracle/evidence/msl-machine/campaigns/erdos1084-harborth-2026-09-02/kernel/Erdos1084Lower.lean",
+  "backend": "scaleway",
+  "host": "root@51.15.107.148",
+  "project": "/root/mathlib4",
+  "toolchain": "leanprover/lean4:v4.31.0-rc1",
+  "needsMathlib": true,
+  "exitCode": 0,
+  "seconds": 24.43,
+  "sha256": "eabb57f873d36bca83d24b3e7616fe053627179e8b82a05fff730820b97485ac",
+  "target": {
+    "problem": "erdos:1084",
+    "upstream_declaration": "erdos_1084.variants.triangular_optimal_d2",
+    "upstream_file": "oracle/acquisition/formal-conjectures/FormalConjectures/ErdosProblems/1084.lean",
+    "upstream_category": "research open",
+    "upstream_statement": "f 2 (3 * n ^ 2 + 3 * n + 1) = 9 * n ^ 2 + 3 * n",
+    "half_sealed": "GE (lower bound) only; LE (upper bound) not attempted",
+    "definitions_reproduced_verbatim": [
+      "unitDistNum (FormalConjecturesForMathlib/Geometry/Metric.lean)",
+      "Metric.IsSeparated' (FormalConjecturesForMathlib/Topology/MetricSpace/MetricSeparated.lean)",
+      "Erdos1084.f (FormalConjectures/ErdosProblems/1084.lean)"
+    ]
+  },
+  "method": {
+    "witness": "hexagonal patch of the triangular lattice, axial coordinates |a|<=k, |b|<=k, |a+b|<=k",
+    "embedding": "P (a,b) = (a + b/2, b*sqrt 3/2) in EuclideanSpace R (Fin 2)",
+    "key_identity": "dist (P p) (P q)^2 = (p1-q1)^2 + (p1-q1)(p2-q2) + (p2-q2)^2, an integer",
+    "evaluation": "kernel `decide` over the explicit integer point set; NO native_decide, NO floating point",
+    "generality": "hex_lower is proved for SYMBOLIC k; only its two finite integer counts (card and unit-pair count) are discharged per concrete k"
+  },
+  "declarations": [
+    { "declaration": "Erdos1084.le_f", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"],
+      "statement": "unitDistNum s <= f d N, for any s with #s = N and IsSeparated' 1 s" },
+    { "declaration": "Erdos1084.dist_P_sq", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"],
+      "statement": "dist (P p) (P q) ^ 2 = ((qf (p.1 - q.1) (p.2 - q.2) : Int) : Real)" },
+    { "declaration": "Erdos1084.unitDistNum_image", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"],
+      "statement": "unitDistNum (T.image P) = #{q in T.sym2 | qfS q = 1}" },
+    { "declaration": "Erdos1084.hex_lower", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"],
+      "statement": "for all k, (idx k).card = 3k^2+3k+1 -> #{q in (idx k).sym2 | qfS q = 1} = 9k^2+3k -> 9k^2+3k <= f 2 (3k^2+3k+1)" },
+    { "declaration": "Erdos1084.lower_k0", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"], "statement": "0 <= f 2 1" },
+    { "declaration": "Erdos1084.lower_k1", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"], "statement": "12 <= f 2 7" },
+    { "declaration": "Erdos1084.lower_k2", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"], "statement": "42 <= f 2 19" },
+    { "declaration": "Erdos1084.lower_k3", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"], "statement": "90 <= f 2 37" },
+    { "declaration": "Erdos1084.lower_k4", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"], "statement": "156 <= f 2 61" },
+    { "declaration": "Erdos1084.lower_k5", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"], "statement": "240 <= f 2 91" },
+    { "declaration": "Erdos1084.lower_k6", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"], "statement": "342 <= f 2 127" },
+    { "declaration": "Erdos1084.lower_127", "clean": true, "axioms": ["propext", "Classical.choice", "Quot.sound"], "statement": "342 <= f 2 127 (human-readable form)" }
+  ],
+  "remaining_obligations": {
+    "lower_bound_symbolic_k": [
+      "(idx k).card = 3*k^2+3*k+1 for symbolic k",
+      "#{q in (idx k).sym2 | qfS q = 1} = 9*k^2+3*k for symbolic k"
+    ],
+    "upper_bound": "f 2 (3k^2+3k+1) <= 9k^2+3k -- not attempted; see the obligation ladder in the campaign report"
+  },
+  "prior_art": {
+    "verdict": "KNOWN_THEOREM",
+    "attribution": "Harborth, H., 'Loesung zu Problem 664A', Elemente der Mathematik 29 (1974), 14-15",
+    "note": "the DeepMind `research open` tag on this variant appears to be a mislabel; see the campaign report"
+  },
+  "errors": []
+}
