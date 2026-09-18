@@ -1,51 +1,91 @@
-# Erdős 1084: Harborth's 1974 theorem and Lean formalization
+# Erdős #1084 — Harborth's penny-graph theorem in Lean
 
-This repository records a correction to the open-problem metadata for `erdos_1084.variants.triangular_optimal_d2` and formalization work around the corresponding extremal penny-graph bound.
+For
 
-Author: Jared Wilder. First public timestamp: 2026-09-10.
+\[
+n=3k^2+3k+1,
+\]
 
-## Prior-art correction
+the two-dimensional extremal function in Erdős #1084 satisfies
 
-The statement
+\[
+\boxed{f_2(n)=9k^2+3k}.
+\]
+
+This special case is classical: it follows directly from Heiko Harborth's 1974 sharp edge bound for penny graphs. The repository records the short derivation and develops the corresponding Lean formalization.
+
+## Harborth's theorem
+
+Harborth proved that a penny graph on `n` vertices has at most
+
+\[
+\left\lfloor 3n-\sqrt{12n-3}\right\rfloor
+\]
+
+edges, with equality attained by suitable hexagonal pieces of the triangular lattice.
+
+The geometric object used in Erdős #1084 is exactly a penny graph: the points are pairwise at distance at least one, and an edge joins two points precisely when their distance is one.
+
+At
+
+\[
+n=3k^2+3k+1,
+\]
+
+we have
+
+\[
+12n-3=(6k+3)^2.
+\]
+
+Therefore Harborth's formula gives
+
+\[
+3(3k^2+3k+1)-(6k+3)=9k^2+3k,
+\]
+
+which is the displayed equality.
+
+The algebra and a numerical check through `k<=59` are recorded in [`REPORT-2026-09-02.md`](REPORT-2026-09-02.md).
+
+## Formalization
+
+The Lean development has two layers.
+
+### Lower bound
+
+`kernel/` contains the constructive lower-bound development, including the symbolic theorem `hex_lower`. The recorded package has **12 declarations with clean axiom footprints**, no `sorry`, and no `native_decide`.
+
+### Upper bound
+
+`upper/` contains **69 Lean files** developing Harborth's upper-bound argument. Of these, **52 are sorry-free**. The remaining files isolate the geometric infrastructure still missing from the formal proof.
+
+The principal unresolved formalization ingredients are:
+
+- planar Steiner-formula / isoperimetric machinery for convex bodies;
+- a convenient Mathlib representation of convex polygons in cyclic order.
+
+These are formalization gaps, not gaps in Harborth's 1974 theorem.
+
+## FormalConjectures correction
+
+The variant
 
 ```text
 f 2 (3k^2 + 3k + 1) = 9k^2 + 3k
 ```
 
-is tagged `@[category research open]` in `FormalConjectures/ErdosProblems/1084.lean`.
+was recorded as research-open in `FormalConjectures/ErdosProblems/1084.lean`. The Harborth theorem above supplies the classical reference for that statement, so the corresponding problem metadata should cite Harborth rather than present the variant as open.
 
-That special case follows from Heiko Harborth, *Lösung zu Problem 664A*, *Elemente der Mathematik* 29 (1974), 14–15. Harborth proves that a penny graph on `n` vertices has at most
+## Reference
 
-```text
-floor(3n - sqrt(12n - 3))
-```
+Heiko Harborth, *Lösung zu Problem 664A*, **Elemente der Mathematik** 29 (1974), 14–15.
 
-edges and that the bound is sharp, attained by hexagonal pieces of the triangular lattice.
+## Repository map
 
-The geometric object in the Lean file is exactly a penny graph: points are pairwise at distance at least 1 and edges join pairs at distance exactly 1. Harborth's `e(n)` therefore matches `f 2 n`.
+- `kernel/` — constructive lower bound and symbolic general-`k` theorem;
+- `upper/` — formalization of the sharp upper-bound argument;
+- `prior-art/` — source and literature notes;
+- `REPORT-2026-09-02.md` — derivation and numerical checks.
 
-At `n = 3k^2 + 3k + 1`,
-
-```text
-12n - 3 = (6k + 3)^2,
-```
-
-so the floor bound gives the displayed equality. `REPORT-2026-09-02.md` contains the algebra and a numerical check through `k <= 59`.
-
-The practical correction for formal-conjectures is therefore to replace the research-open tag on this variant with the Harborth citation.
-
-## Lean formalization
-
-- `kernel/` — lower-bound development, including a symbolic general-`k` theorem `hex_lower`; 12 declarations with clean axiom footprints and no `native_decide`.
-- `upper/` — 69 Lean files formalizing the upper-bound argument; **52 are sorry-free** and the remaining files isolate the missing geometric ingredients explicitly.
-- `prior-art/` — literature-search notes and source material documenting the Harborth identification.
-
-## Remaining formalization work
-
-The unresolved Lean work is in the geometric upper-bound infrastructure rather than the special-case mathematics itself. The current missing ingredients are planar Steiner-formula/isoperimetric machinery for convex bodies and a convenient Mathlib representation of a convex polygon in cyclic order.
-
-Those gaps are formalization dependencies; the Harborth theorem and its implication for the displayed special case are classical mathematics from 1974.
-
-## License
-
-Apache-2.0.
+Author: Jared Wilder. License: Apache-2.0.
